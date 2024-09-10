@@ -1,24 +1,23 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="myvecstore",
+    name="MyVecStore",
     version="0.1",
     packages=find_packages(),
     install_requires=[
-        "langchain_community",
         "langchain",
-        "mysql"
-        "faiss-cpu",
+        "langchain-community",
+        "mysql-connector-python",
+        "jq"
     ],
-    author="Tathiana Barchi",
+    python_requires=">=3.12",
+    author="IBICT/Tathiana Barchi",
     description="Python package for creating Vector Store using FAISS",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/seu_usuario/meu_pacote",
+    url="https://github.com/tathianamb/MyVecStore",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        "License :: OSI Approved :: MIT License"
     ],
-    python_requires=">=3.7",
 )
