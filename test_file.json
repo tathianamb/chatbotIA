@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Article 1",
+        "post_title": "Understanding Machine Learning",
+        "post_content": "Machine learning is a field of artificial intelligence...",
+        "taxonomy_name_values": ["AI", "Machine Learning"],
+        "post_date": "2023-09-01"
+    },
+    {
+        "name": "Article 2",
+        "post_title": "Introduction to Neural Networks",
+        "post_content": "Neural networks are a set of algorithms modeled after the human brain...",
+        "taxonomy_name_values": ["Neural Networks", "Deep Learning"],
+        "post_date": "2023-09-10"
+    },
+    {
+        "name": "Article 3",
+        "post_title": "Natural Language Processing Basics",
+        "post_content": "NLP involves the interaction between computers and humans using natural language...",
+        "taxonomy_name_values": ["NLP", "Computational Linguistics"],
+        "post_date": "2023-09-15"
+    }
+]
