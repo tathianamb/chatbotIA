@@ -5,8 +5,10 @@ setup(
     version="0.1",
     packages=find_packages(),
     install_requires=[
+        "langchain_community",
+        "langchain",
+        "mysql"
         "faiss-cpu",
-        "nomic-embed",
     ],
     author="Tathiana Barchi",
     description="Python package for creating Vector Store using FAISS",
@@ -18,5 +20,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.7",  # Versão mínima do Python
+    python_requires=">=3.7",
 )
