@@ -1,4 +1,4 @@
-from MyVecStore.vector_store import DataToVectorStoreProcessor
+from vendor.vector_store import DataToVectorStoreProcessor
 
 
 json_config = {
