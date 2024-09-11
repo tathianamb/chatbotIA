@@ -119,11 +119,11 @@ if __name__ == "__main__":
         'database': 'dbwordpress'
     }
     script_dir = os.path.dirname(os.path.realpath(__file__))
-    save_path = os.path.join(script_dir, '..', 'data')
+    save_path = os.path.normpath(os.path.join(script_dir, '..', 'data', 'sql_MAX_INNER_PRODUCT_index'))
     
     processor = DataToVectorStoreProcessor(source_type="sql",
                                            source_config=db_config,
                                            chunk_size=750,
                                            chunk_overlap=150,
-                                           index_path=os.path.normpath(save_path))
+                                           index_path=save_path)
     processor.process()
