@@ -2,8 +2,12 @@ FROM python:3.12
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y \
-    curl \
+COPY . /app
+
+ENV PYTHONPATH=/app
+
+RUN apt-get update && apt-get install -y curl
+
 ARG FAISS_VERSION=cpu
 
 RUN if [ "$FAISS_VERSION" = "cpu" ]; then \

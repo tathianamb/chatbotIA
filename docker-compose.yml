@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
-  python-app:
+  vector-store-service:
     build:
       context: .
       args:
-        FAISS_VERSION: ${FAISS_VERSION}  # 'cpu' or 'gpu'
-    container_name: my_python_app
+        FAISS_VERSION: cpu  # 'cpu' or 'gpu'
+    container_name: myveccontainer
     volumes:
       - .:/app
     environment:
