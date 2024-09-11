@@ -1,0 +1,147 @@
+2024-08-08 10:55:56,812 - INFO - Initialized CSVToVectorStoreProcessor with parameters: file_path=popularizacao_da_ciencia.csv, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=EUCLIDEAN_DISTANCE, index_path=popularizacao_da_ciencia_EUCLIDEAN_DISTANCE_index
+2024-08-08 10:55:56,812 - INFO - Starting processing.
+2024-08-08 10:55:56,812 - INFO - Loading documents from CSV file.
+2024-08-08 10:55:56,813 - INFO - Splitting text into chunks.
+2024-08-08 10:55:56,814 - INFO - Creating vector store.
+2024-08-08 10:56:44,334 - INFO - Saving vector store to popularizacao_da_ciencia_EUCLIDEAN_DISTANCE_index
+2024-08-08 10:56:44,335 - INFO - Processing completed in 47.52 seconds.
+2024-08-08 10:56:44,335 - INFO - Initialized CSVToVectorStoreProcessor with parameters: file_path=popularizacao_da_ciencia.csv, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=popularizacao_da_ciencia_MAX_INNER_PRODUCT_index
+2024-08-08 10:56:44,335 - INFO - Starting processing.
+2024-08-08 10:56:44,335 - INFO - Loading documents from CSV file.
+2024-08-08 10:56:44,336 - INFO - Splitting text into chunks.
+2024-08-08 10:56:44,337 - INFO - Creating vector store.
+2024-08-08 10:57:31,370 - INFO - Saving vector store to popularizacao_da_ciencia_MAX_INNER_PRODUCT_index
+2024-08-08 10:57:31,371 - INFO - Processing completed in 47.04 seconds.
+2024-08-08 10:57:31,371 - INFO - Initialized CSVToVectorStoreProcessor with parameters: file_path=popularizacao_da_ciencia.csv, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=DOT_PRODUCT, index_path=popularizacao_da_ciencia_DOT_PRODUCT_index
+2024-08-08 10:57:31,371 - INFO - Starting processing.
+2024-08-08 10:57:31,371 - INFO - Loading documents from CSV file.
+2024-08-08 10:57:31,372 - INFO - Splitting text into chunks.
+2024-08-08 10:57:31,373 - INFO - Creating vector store.
+2024-08-08 10:58:18,364 - INFO - Saving vector store to popularizacao_da_ciencia_DOT_PRODUCT_index
+2024-08-08 10:58:18,365 - INFO - Processing completed in 46.99 seconds.
+2024-08-08 10:58:18,365 - INFO - Initialized CSVToVectorStoreProcessor with parameters: file_path=popularizacao_da_ciencia.csv, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=JACCARD, index_path=popularizacao_da_ciencia_JACCARD_index
+2024-08-08 10:58:18,365 - INFO - Starting processing.
+2024-08-08 10:58:18,365 - INFO - Loading documents from CSV file.
+2024-08-08 10:58:18,366 - INFO - Splitting text into chunks.
+2024-08-08 10:58:18,367 - INFO - Creating vector store.
+2024-08-08 10:59:05,358 - INFO - Saving vector store to popularizacao_da_ciencia_JACCARD_index
+2024-08-08 10:59:05,359 - INFO - Processing completed in 46.99 seconds.
+2024-08-08 10:59:05,359 - INFO - Initialized CSVToVectorStoreProcessor with parameters: file_path=popularizacao_da_ciencia.csv, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=COSINE, index_path=popularizacao_da_ciencia_COSINE_index
+2024-08-08 10:59:05,359 - INFO - Starting processing.
+2024-08-08 10:59:05,359 - INFO - Loading documents from CSV file.
+2024-08-08 10:59:05,360 - INFO - Splitting text into chunks.
+2024-08-08 10:59:05,361 - INFO - Creating vector store.
+2024-08-08 10:59:52,569 - INFO - Saving vector store to popularizacao_da_ciencia_COSINE_index
+2024-08-08 10:59:52,570 - INFO - Processing completed in 47.21 seconds.
+2024-09-02 13:15:23,538 - INFO - Initialized CSVToVectorStoreProcessor with parameters: file_path=iphan-inrc-Identificacao-BemCultural.csv, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=EUCLIDEAN_DISTANCE, index_path=iphan-inrc-Identificacao-BemCultural_EUCLIDEAN_DISTANCE_index
+2024-09-02 13:15:23,539 - INFO - Starting processing.
+2024-09-02 13:15:23,539 - INFO - Loading documents from CSV file.
+2024-09-02 13:15:23,651 - INFO - Splitting text into chunks.
+2024-09-02 13:15:24,480 - INFO - Creating vector store.
+2024-09-02 14:24:46,041 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=csv, chunk_size=500, chunk_overlap=120, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=csv_MAX_INNER_PRODUCT_index
+2024-09-02 14:24:46,041 - INFO - Starting processing.
+2024-09-02 14:24:46,041 - INFO - Loading documents from csv source.
+2024-09-02 14:24:46,137 - INFO - Splitting text into chunks.
+2024-09-02 14:24:47,124 - INFO - Creating vector store.
+2024-09-03 11:12:23,470 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=csv, chunk_size=800, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=csv_MAX_INNER_PRODUCT_index
+2024-09-03 11:12:23,471 - INFO - Starting processing.
+2024-09-03 11:12:23,471 - INFO - Loading documents from csv source.
+2024-09-03 11:12:23,592 - INFO - Splitting text into chunks.
+2024-09-03 11:12:24,541 - INFO - Creating vector store.
+2024-09-03 11:18:53,900 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=csv, chunk_size=800, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=csv_DistanceStrategy.MAX_INNER_PRODUCT_index
+2024-09-03 11:18:53,900 - INFO - Starting processing.
+2024-09-03 11:18:53,900 - INFO - Loading documents from csv source.
+2024-09-03 11:18:53,979 - INFO - Splitting text into chunks.
+2024-09-03 11:18:54,676 - INFO - Creating vector store.
+2024-09-09 12:38:13,839 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=csv, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=csv_MAX_INNER_PRODUCT_index
+2024-09-09 12:38:13,840 - INFO - Starting processing.
+2024-09-09 12:38:13,840 - INFO - Loading documents from csv source.
+2024-09-09 12:38:13,952 - INFO - Splitting text into chunks.
+2024-09-09 12:38:14,914 - INFO - Creating vector store.
+2024-09-09 13:45:16,429 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:45:39,519 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:46:15,546 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:46:34,031 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:46:38,970 - INFO - Starting processing.
+2024-09-09 13:46:42,448 - INFO - Loading documents from json source.
+2024-09-09 13:47:42,117 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:47:48,357 - INFO - Starting processing.
+2024-09-09 13:47:48,358 - INFO - Loading documents from json source.
+2024-09-09 13:48:51,546 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:48:56,401 - INFO - Starting processing.
+2024-09-09 13:48:56,402 - INFO - Loading documents from json source.
+2024-09-09 13:50:37,936 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:50:45,214 - INFO - Starting processing.
+2024-09-09 13:50:45,215 - INFO - Loading documents from json source.
+2024-09-09 13:51:52,880 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:51:52,881 - INFO - Starting processing.
+2024-09-09 13:51:52,881 - INFO - Loading documents from json source.
+2024-09-09 13:51:52,894 - INFO - Splitting text into chunks.
+2024-09-09 13:51:52,934 - INFO - Creating vector store.
+2024-09-09 13:53:55,558 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=json_MAX_INNER_PRODUCT_index
+2024-09-09 13:53:55,559 - INFO - Starting processing.
+2024-09-09 13:53:55,559 - INFO - Loading documents from json source.
+2024-09-09 13:53:55,589 - INFO - Splitting text into chunks.
+2024-09-09 13:53:55,634 - INFO - Creating vector store.
+2024-09-09 14:09:52,951 - INFO - Saving vector store to json_MAX_INNER_PRODUCT_index
+2024-09-09 14:09:52,957 - INFO - Processing completed in 957.40 seconds.
+2024-09-10 13:59:30,262 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=sql_DistanceStrategy.MAX_INNER_PRODUCT_index
+2024-09-10 13:59:30,263 - INFO - Starting processing.
+2024-09-10 13:59:30,263 - INFO - Loading documents from sql source.
+2024-09-10 14:00:11,893 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=sql_DistanceStrategy.MAX_INNER_PRODUCT_index
+2024-09-10 14:00:11,893 - INFO - Starting processing.
+2024-09-10 14:00:11,893 - INFO - Loading documents from sql source.
+2024-09-10 14:00:11,893 - INFO - Connecting to MySQL database.
+2024-09-10 14:00:11,911 - INFO - Executing query.
+2024-09-10 14:00:11,939 - INFO - Fetched 121 rows from the database.
+2024-09-10 14:00:11,941 - INFO - MySQL connection closed.
+2024-09-10 14:00:11,942 - INFO - Splitting text into chunks.
+2024-09-10 14:00:11,960 - INFO - Creating vector store.
+2024-09-10 14:06:07,440 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=sql_DistanceStrategy.MAX_INNER_PRODUCT_index
+2024-09-10 14:06:07,440 - INFO - Starting processing.
+2024-09-10 14:06:07,440 - INFO - Loading documents from sql source.
+2024-09-10 14:06:07,440 - INFO - Connecting to MySQL database.
+2024-09-10 14:06:07,460 - INFO - Executing query.
+2024-09-10 14:06:07,492 - INFO - Fetched 121 rows from the database.
+2024-09-10 14:06:07,494 - INFO - MySQL connection closed.
+2024-09-10 14:06:07,494 - INFO - Splitting text into chunks.
+2024-09-10 14:06:07,513 - INFO - Creating vector store.
+2024-09-10 14:08:34,490 - INFO - Saving vector store to sql_DistanceStrategy.MAX_INNER_PRODUCT_index
+2024-09-10 14:08:34,494 - INFO - Processing completed in 147.05 seconds.
+2024-09-11 11:52:37,026 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=/home/tathiana/PycharmProjects/MyVecStore/data
+2024-09-11 11:52:37,031 - INFO - Starting processing.
+2024-09-11 11:52:37,031 - INFO - Loading documents from sql source.
+2024-09-11 11:52:37,031 - INFO - Connecting to MySQL database.
+2024-09-11 11:54:04,834 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=/home/tathiana/PycharmProjects/MyVecStore/data
+2024-09-11 11:54:04,834 - INFO - Starting processing.
+2024-09-11 11:54:04,834 - INFO - Loading documents from sql source.
+2024-09-11 11:54:04,834 - INFO - Connecting to MySQL database.
+2024-09-11 11:54:04,867 - INFO - Executing query.
+2024-09-11 11:54:04,908 - INFO - Fetched 121 rows from the database.
+2024-09-11 11:54:04,910 - INFO - MySQL connection closed.
+2024-09-11 11:54:04,910 - INFO - Splitting text into chunks.
+2024-09-11 11:54:04,928 - INFO - Creating vector store.
+2024-09-11 11:56:21,010 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data
+2024-09-11 11:56:21,014 - INFO - Processing completed in 136.18 seconds.
+2024-09-11 12:00:19,412 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=/home/tathiana/PycharmProjects/MyVecStore/data/sql_MAX_INNER_PRODUCT_index
+2024-09-11 12:00:19,412 - INFO - Starting processing.
+2024-09-11 12:00:19,412 - INFO - Loading documents from sql source.
+2024-09-11 12:00:19,412 - INFO - Connecting to MySQL database.
+2024-09-11 12:00:19,431 - INFO - Executing query.
+2024-09-11 12:00:19,480 - INFO - Fetched 121 rows from the database.
+2024-09-11 12:00:19,482 - INFO - MySQL connection closed.
+2024-09-11 12:00:19,483 - INFO - Splitting text into chunks.
+2024-09-11 12:00:19,500 - INFO - Creating vector store.
+2024-09-11 12:02:34,064 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_MAX_INNER_PRODUCT_index
+2024-09-11 12:02:34,068 - INFO - Processing completed in 134.66 seconds.
+2024-09-11 12:08:06,801 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=sql_MAX_INNER_PRODUCT_index
+2024-09-11 12:08:06,801 - INFO - Starting processing.
+2024-09-11 12:08:06,801 - INFO - Loading documents from sql source.
+2024-09-11 12:08:06,801 - INFO - Connecting to MySQL database.
+2024-09-11 12:08:06,819 - INFO - Executing query.
+2024-09-11 12:08:06,859 - INFO - Fetched 121 rows from the database.
+2024-09-11 12:08:06,861 - INFO - MySQL connection closed.
+2024-09-11 12:08:06,861 - INFO - Splitting text into chunks.
+2024-09-11 12:08:06,880 - INFO - Creating vector store.
+2024-09-11 12:10:22,646 - INFO - Saving vector store to sql_MAX_INNER_PRODUCT_index
+2024-09-11 12:10:22,650 - INFO - Processing completed in 135.85 seconds.
