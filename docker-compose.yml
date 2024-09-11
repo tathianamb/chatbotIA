@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  python-app:
+    build:
+      context: .
+      args:
+        FAISS_VERSION: ${FAISS_VERSION}  # 'cpu' or 'gpu'
+    container_name: my_python_app
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8000:8000"
+    command: python src/vector_store_iphan-obs.py
