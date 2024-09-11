@@ -23,7 +23,7 @@ class DataToVectorStoreProcessor:
         self.chunk_overlap = chunk_overlap
         self.model_name = model_name
         self.distance_strategy = distance_strategy
-        self.index_path = index_path if index_path is not None else f"{source_type}_{distance_strategy}_index"
+        self.index_path = index_path if index_path is not None else f"{source_type}_{distance_strategy.name}_index"
 
         logging.info(f"Initialized DataToVectorStoreProcessor with parameters: "
                      f"source_type={self.source_type}, chunk_size={self.chunk_size}, chunk_overlap={self.chunk_overlap}, "
