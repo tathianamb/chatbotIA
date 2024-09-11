@@ -1,4 +1,20 @@
 services:
+  ollama-service:
+    build:
+      context: .
+    container_name: ollama-serve
+    ports:
+      - "8000:8000"
+    command: >
+      /bin/bash -c "
+      ollama serve & 
+      echo 'Aguardando Ollama iniciar...';
+      until curl -s http://localhost:8000 > /dev/null; do
+        sleep 2;
+      done;
+      echo 'Ollama iniciado, prosseguindo com o download dos modelos.';
+      ollama pull llama3 && ollama pull nomic-embed-text"
+
   vector-store-service:
     build:
       context: .
@@ -9,6 +25,7 @@ services:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
-    ports:
-      - "8000:8000"
-    command: python src/vector_store_iphan-obs.py
+    #command: python src/vector_store_iphan-obs.py
+    command: python test/test.py
+    depends_on:
+      - ollama-service
