@@ -30,8 +30,8 @@ services:
       sh -c "
       pip install faiss-cpu &&
       pip install --no-cache-dir -r requirements.txt &&
-      cd test &&
-      python test.py
+      cd src &&
+      python vector_store_iphan_obs.py
       "
     environment:
       - PYTHONUNBUFFERED=1
