@@ -19,8 +19,6 @@ RUN if [ "$FAISS_VERSION" = "cpu" ]; then \
 RUN curl -O https://ollama.com/install.sh && \
     bash install.sh
 
-COPY requirements.txt /app/requirements.txt
-
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 11434

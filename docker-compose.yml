@@ -6,22 +6,34 @@ services:
     volumes:
       - ./ollama/ollama:/root/.ollama
       - ./entrypoint.sh:/entrypoint.sh
+      - ./data:/ollama/models
     container_name: ollama-pull
     entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    healthcheck:
+      test: [ "CMD-SHELL", "[ -f /root/.ollama/completed.flag ] || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    environment:
+        - OLLAMA_MODEL_PATH=/ollama/models
+
 
   vector-store-service:
     build:
       context: .
+      dockerfile: Dockerfile
       args:
-        FAISS_VERSION: cpu  # Especifique 'gpu' se necessário
+        FAISS_VERSION: cpu
     container_name: vector-store-container
     volumes:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
+      - OLLAMA_URL=http://ollama_service:11434
     depends_on:
-      - ollama-pull-service
-    command: python test/test.py"
+      ollama-pull-service:
+        condition: service_healthy
+    command: python test/test.py
 
 networks:
   default:
