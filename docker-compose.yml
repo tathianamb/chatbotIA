@@ -1,31 +1,35 @@
 services:
-  ollama-service:
+  ollama-pull-service:
     build:
       context: .
-    container_name: ollama-serve
-    ports:
-      - "8000:8000"
+    container_name: ollama-pull
     command: >
       /bin/bash -c "
-      ollama serve & 
-      echo 'Aguardando Ollama iniciar...';
-      until curl -s http://localhost:8000 > /dev/null; do
-        sleep 2;
-      done;
-      echo 'Ollama iniciado, prosseguindo com o download dos modelos.';
-      ollama pull llama3 && ollama pull nomic-embed-text"
+      echo 'Baixando modelos...';
+      ollama serve && ollama pull llama3 && ollama pull nomic-embed-text && touch /app/models_ready.txt;
+      echo 'Modelos baixados com sucesso.'"
 
   vector-store-service:
     build:
       context: .
       args:
-        FAISS_VERSION: cpu  # 'cpu' or 'gpu'
-    container_name: myveccontainer
+        FAISS_VERSION: cpu  # Especifique 'gpu' se necessário
+    container_name: vector-store-container
     volumes:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
-    #command: python src/vector_store_iphan-obs.py
-    command: python test/test.py
     depends_on:
-      - ollama-service
+      - ollama-pull-service
+    command: >
+      /bin/bash -c "
+      while [ ! -f /app/models_ready.txt ]; do
+        echo 'Aguardando o download dos modelos...';
+        sleep 5;
+      done;
+      echo 'Modelos prontos, iniciando Vector Store...';
+      python test/test.py"
+
+networks:
+  default:
+    driver: bridge
