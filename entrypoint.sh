@@ -1,13 +1,15 @@
 #!/bin/bash
-# Inicia o serviço Ollama
+# Install curl if not available
+if ! command -v curl &> /dev/null
+then
+    apt-get update && apt-get install -y curl
+fi
+
+echo "Starting server"
 ollama serve &
+sleep 5
 
-# Aguarda 10 segundos
-sleep 10
-
-# Puxa os modelos necessários
-ollama pull llama3
+echo "Pulling models"
 ollama pull nomic-embed-text
 
-# Mantém o contêiner em execução após o término dos comandos
 wait

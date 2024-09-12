@@ -1,40 +1,48 @@
+version: '3.8'
+
 services:
-  ollama-pull-service:
+  ollama:
     image: ollama/ollama:latest
+    container_name: ollama-server
+    expose:
+      - 11434/tcp
     ports:
       - 11434:11434
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:11434" ]
+      interval: 60s
+      timeout: 30s
+      retries: 10
     volumes:
       - ./ollama/ollama:/root/.ollama
       - ./entrypoint.sh:/entrypoint.sh
-      - ./data:/ollama/models
-    container_name: ollama-pull
-    entrypoint: ["/bin/bash", "/entrypoint.sh"]
-    healthcheck:
-      test: [ "CMD-SHELL", "[ -f /root/.ollama/completed.flag ] || exit 1" ]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-    environment:
-        - OLLAMA_MODEL_PATH=/ollama/models
+    entrypoint: ["/bin/bash", "/entrypoint.sh" ]
+    networks:
+      - ollama-network
 
-
-  vector-store-service:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        FAISS_VERSION: cpu
-    container_name: vector-store-container
+  vector-store:
+    image: python:3.12.6
+    container_name: python_app
     volumes:
       - .:/app
+    working_dir: /app
+    command: >
+      sh -c "
+      pip install faiss-cpu &&
+      pip install --no-cache-dir -r requirements.txt &&
+      cd test &&
+      python test.py
+      "
     environment:
       - PYTHONUNBUFFERED=1
-      - OLLAMA_URL=http://ollama_service:11434
+      - PYTHONPATH=/app
+      - OLLAMA_BASE_URL=http://ollama:11434
     depends_on:
-      ollama-pull-service:
+      ollama:
         condition: service_healthy
-    command: python test/test.py
+    networks:
+      - ollama-network
 
 networks:
-  default:
+  ollama-network:
     driver: bridge
