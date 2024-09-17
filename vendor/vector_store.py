@@ -6,6 +6,7 @@ from langchain_community.vectorstores.faiss import DistanceStrategy
 import time
 from vendor.utils import MySQLLoader
 import logging
+import os
 
 
 class DataToVectorStoreProcessor:
@@ -61,7 +62,7 @@ class DataToVectorStoreProcessor:
 
     def create_vector_store(self, text_chunks):
         logging.info("Creating vector store.")
-        embeddings = OllamaEmbeddings(model=self.model_name)
+        embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_BASE_URL"), model=self.model_name)
         vector_store = FAISS.from_texts(text_chunks,
                                         embedding=embeddings,
                                         distance_strategy=self.distance_strategy)

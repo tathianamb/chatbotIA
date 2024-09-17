@@ -2,8 +2,10 @@ from vendor.vector_store import DataToVectorStoreProcessor
 import logging
 import os
 
+script_dir = os.path.dirname(os.path.realpath(__file__))
+
 logging.basicConfig(
-    filename='../log/vector_store_processing.log',
+    filename=os.path.normpath(os.path.join(script_dir, '..', 'log', 'vector_store_processing.log')),
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     encoding='utf-8'
@@ -118,7 +120,7 @@ if __name__ == "__main__":
         'password': 'senha@123',
         'database': 'dbwordpress'
     }
-    script_dir = os.path.dirname(os.path.realpath(__file__))
+
     save_path = os.path.normpath(os.path.join(script_dir, '..', 'data', 'sql_MAX_INNER_PRODUCT_index'))
     
     processor = DataToVectorStoreProcessor(source_type="sql",

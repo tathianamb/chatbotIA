@@ -1,16 +1,48 @@
 version: '3.8'
 
 services:
-  python-app:
-    build:
-      context: .
-      args:
-        FAISS_VERSION: ${FAISS_VERSION}  # 'cpu' or 'gpu'
-    container_name: my_python_app
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama-server
+    expose:
+      - 11434/tcp
+    ports:
+      - 11434:11434
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:11434" ]
+      interval: 60s
+      timeout: 30s
+      retries: 10
+    volumes:
+      - ./ollama/ollama:/root/.ollama
+      - ./entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/bin/bash", "/entrypoint.sh" ]
+    networks:
+      - ollama-network
+
+  vector-store:
+    image: python:3.12.6
+    container_name: python_app
     volumes:
       - .:/app
+    working_dir: /app
+    command: >
+      sh -c "
+      pip install faiss-cpu &&
+      pip install --no-cache-dir -r requirements.txt &&
+      cd src &&
+      python vector_store_iphan_obs.py
+      "
     environment:
       - PYTHONUNBUFFERED=1
-    ports:
-      - "8000:8000"
-    command: python src/vector_store_iphan-obs.py
+      - PYTHONPATH=/app
+      - OLLAMA_BASE_URL=http://ollama:11434
+    depends_on:
+      ollama:
+        condition: service_healthy
+    networks:
+      - ollama-network
+
+networks:
+  ollama-network:
+    driver: bridge
