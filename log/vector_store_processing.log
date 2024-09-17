@@ -216,3 +216,25 @@
 2024-09-17 12:42:49,295 - INFO - Creating vector store using FAISS.
 2024-09-17 12:45:37,629 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_inner_product_index
 2024-09-17 12:45:37,632 - INFO - Processing completed in 168.43 seconds.
+2024-09-17 13:25:03,715 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=400, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/home/tathiana/PycharmProjects/MyVecStore/data/sql_inner_product_index
+2024-09-17 13:25:03,715 - INFO - Starting processing.
+2024-09-17 13:25:03,715 - INFO - Loading documents from sql source.
+2024-09-17 13:25:03,715 - INFO - Connecting to MySQL database.
+2024-09-17 13:25:03,734 - INFO - Executing query.
+2024-09-17 13:25:03,764 - INFO - Fetched 121 rows from the database.
+2024-09-17 13:25:03,766 - INFO - MySQL connection closed.
+2024-09-17 13:25:03,766 - INFO - Splitting text into chunks.
+2024-09-17 13:25:03,791 - INFO - Creating vector store using FAISS.
+2024-09-17 13:27:51,631 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_inner_product_index
+2024-09-17 13:27:51,649 - INFO - Processing completed in 167.93 seconds.
+2024-09-17 13:30:25,672 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=400, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/home/tathiana/PycharmProjects/MyVecStore/data/sql_inner_product
+2024-09-17 13:30:25,672 - INFO - Starting processing.
+2024-09-17 13:30:25,672 - INFO - Loading documents from sql source.
+2024-09-17 13:30:25,672 - INFO - Connecting to MySQL database.
+2024-09-17 13:30:25,688 - INFO - Executing query.
+2024-09-17 13:30:25,714 - INFO - Fetched 121 rows from the database.
+2024-09-17 13:30:25,716 - INFO - MySQL connection closed.
+2024-09-17 13:30:25,716 - INFO - Splitting text into chunks.
+2024-09-17 13:30:25,741 - INFO - Creating vector store using FAISS.
+2024-09-17 13:33:11,661 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_inner_product
+2024-09-17 13:33:11,664 - INFO - Processing completed in 165.99 seconds.
