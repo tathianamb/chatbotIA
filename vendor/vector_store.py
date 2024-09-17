@@ -14,7 +14,7 @@ import os
 
 class DataToVectorStoreProcessor:
     def __init__(self, source_type, source_config, chunk_size=1000, chunk_overlap=200,
-                 model_name="nomic-embed-text", distance_strategy=DistanceStrategy.MAX_INNER_PRODUCT, index_path=None):
+                 model_name="nomic-embed-text", distance_strategy=None, index_path=None):
         '''
         if not isinstance(distance_strategy, DistanceStrategy):
             valid_values = ', '.join(e.name for e in DistanceStrategy)
