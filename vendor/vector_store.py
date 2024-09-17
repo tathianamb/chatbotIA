@@ -8,6 +8,7 @@ from langchain_community.vectorstores.faiss import DistanceStrategy
 import time
 from vendor.utils import MySQLLoader
 import logging
+import json
 import os
 
 
@@ -26,7 +27,7 @@ class DataToVectorStoreProcessor:
         self.chunk_overlap = chunk_overlap
         self.model_name = model_name
         self.distance_strategy = distance_strategy
-        self.index_path = index_path if index_path is not None else os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data', f"{source_type}_{distance_strategy}_index"))
+        self.index_path = index_path if index_path is not None else os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data', f"{source_type}_{distance_strategy}"))
 
         logging.info(f"Initialized DataToVectorStoreProcessor with parameters: "
                      f"source_type={self.source_type}, chunk_size={self.chunk_size}, chunk_overlap={self.chunk_overlap}, "
@@ -76,6 +77,9 @@ class DataToVectorStoreProcessor:
         logging.info("Creating vector store using FAISS.")
         embeddings = OllamaEmbeddings(model=self.model_name)
 
+        with open(f"{self.index_path}_docs.json", "w", encoding="utf-8") as f:
+            json.dump(text_chunks, f, ensure_ascii=False, indent=2)
+
         chunk_embeddings = [embeddings.embed_query(chunk) for chunk in text_chunks]
         chunk_embeddings = np.array(chunk_embeddings).astype("float32")
 
@@ -94,7 +98,7 @@ class DataToVectorStoreProcessor:
     def save_vector_store(self, index):
         logging.info(f"Saving vector store to {self.index_path}")
         #vector_store.save_local(self.index_path)
-        faiss.write_index(index, f"{self.index_path}.index")
+        faiss.write_index(index, f"{self.index_path}_index")
 
 
     def process(self):
