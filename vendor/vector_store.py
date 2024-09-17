@@ -1,6 +1,8 @@
 from langchain_community.document_loaders import CSVLoader, JSONLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
+import faiss
+import numpy as np
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores.faiss import DistanceStrategy
 import time
@@ -12,23 +14,23 @@ import os
 class DataToVectorStoreProcessor:
     def __init__(self, source_type, source_config, chunk_size=1000, chunk_overlap=200,
                  model_name="nomic-embed-text", distance_strategy=DistanceStrategy.MAX_INNER_PRODUCT, index_path=None):
-
+        '''
         if not isinstance(distance_strategy, DistanceStrategy):
             valid_values = ', '.join(e.name for e in DistanceStrategy)
             raise ValueError(
                 f"Invalid distance_strategy: {distance_strategy}. Must be one of {valid_values}")
-
+        '''
         self.source_type = source_type
         self.source_config = source_config
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         self.model_name = model_name
         self.distance_strategy = distance_strategy
-        self.index_path = index_path if index_path is not None else f"{source_type}_{distance_strategy.name}_index"
+        self.index_path = index_path if index_path is not None else os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data', f"{source_type}_{distance_strategy}_index"))
 
         logging.info(f"Initialized DataToVectorStoreProcessor with parameters: "
                      f"source_type={self.source_type}, chunk_size={self.chunk_size}, chunk_overlap={self.chunk_overlap}, "
-                     f"model_name={self.model_name}, distance_strategy={self.distance_strategy.name}, index_path={self.index_path}")
+                     f"model_name={self.model_name}, distance_strategy={self.distance_strategy}, index_path={self.index_path}")
 
     def load_documents(self):
         logging.info(f"Loading documents from {self.source_type} source.")
@@ -60,17 +62,40 @@ class DataToVectorStoreProcessor:
         split_docs = text_splitter.split_documents(docs)
         return [chunk.page_content for chunk in split_docs]
 
+    '''    
     def create_vector_store(self, text_chunks):
         logging.info("Creating vector store.")
         embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_BASE_URL"), model=self.model_name)
         vector_store = FAISS.from_texts(text_chunks,
                                         embedding=embeddings,
                                         distance_strategy=self.distance_strategy)
-        return vector_store
+        return vector_store'''
 
-    def save_vector_store(self, vector_store):
+
+    def create_vector_store(self, text_chunks):
+        logging.info("Creating vector store using FAISS.")
+        embeddings = OllamaEmbeddings(model=self.model_name)
+
+        chunk_embeddings = [embeddings.embed_query(chunk) for chunk in text_chunks]
+        chunk_embeddings = np.array(chunk_embeddings).astype("float32")
+
+        if self.distance_strategy == "inner_product":
+            index = faiss.IndexFlatIP(chunk_embeddings.shape[1])
+        elif self.distance_strategy == "l2":
+            index = faiss.IndexFlatL2(chunk_embeddings.shape[1])
+        else:
+            raise ValueError(f"Invalid distance strategy: {self.distance_strategy}")
+
+        index.add(chunk_embeddings)
+
+        return index
+
+
+    def save_vector_store(self, index):
         logging.info(f"Saving vector store to {self.index_path}")
-        vector_store.save_local(self.index_path)
+        #vector_store.save_local(self.index_path)
+        faiss.write_index(index, f"{self.index_path}.index")
+
 
     def process(self):
         logging.info("Starting processing.")
