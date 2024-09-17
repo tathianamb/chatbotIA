@@ -145,3 +145,14 @@
 2024-09-11 12:08:06,880 - INFO - Creating vector store.
 2024-09-11 12:10:22,646 - INFO - Saving vector store to sql_MAX_INNER_PRODUCT_index
 2024-09-11 12:10:22,650 - INFO - Processing completed in 135.85 seconds.
+2024-09-17 10:55:22,351 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=400, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=MAX_INNER_PRODUCT, index_path=/home/tathiana/PycharmProjects/MyVecStore/data/sql_MAX_INNER_PRODUCT_index
+2024-09-17 10:55:22,352 - INFO - Starting processing.
+2024-09-17 10:55:22,352 - INFO - Loading documents from sql source.
+2024-09-17 10:55:22,352 - INFO - Connecting to MySQL database.
+2024-09-17 10:55:22,379 - INFO - Executing query.
+2024-09-17 10:55:22,422 - INFO - Fetched 121 rows from the database.
+2024-09-17 10:55:22,424 - INFO - MySQL connection closed.
+2024-09-17 10:55:22,424 - INFO - Splitting text into chunks.
+2024-09-17 10:55:22,449 - INFO - Creating vector store.
+2024-09-17 10:58:06,753 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_MAX_INNER_PRODUCT_index
+2024-09-17 10:58:06,760 - INFO - Processing completed in 164.41 seconds.
