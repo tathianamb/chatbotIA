@@ -127,5 +127,5 @@ if __name__ == "__main__":
                                            source_config=db_config,
                                            chunk_size=400,
                                            chunk_overlap=100,
-                                           index_path=save_path)
+                                           distance_strategy='inner_product')
     processor.process()
