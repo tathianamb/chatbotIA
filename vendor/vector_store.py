@@ -80,7 +80,7 @@ class DataToVectorStoreProcessor:
         with open(f"{self.index_path}_docs.json", "w", encoding="utf-8") as f:
             json.dump(text_chunks, f, ensure_ascii=False, indent=2)
 
-        chunk_embeddings = [embeddings.C(chunk) for chunk in text_chunks]
+        chunk_embeddings = embeddings.embed_documents(text_chunks)
         chunk_embeddings = np.array(chunk_embeddings).astype("float32")
 
         if self.distance_strategy == "inner_product":

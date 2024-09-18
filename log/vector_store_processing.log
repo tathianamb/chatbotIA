@@ -275,3 +275,23 @@
 2024-09-17 21:00:50,883 - INFO - Creating vector store using FAISS.
 2024-09-17 21:04:40,705 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_l2
 2024-09-17 21:04:40,714 - INFO - Processing completed in 229.95 seconds.
+2024-09-17 21:26:03,023 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=300, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=/home/tathiana/PycharmProjects/MyVecStore/data/sql_l2
+2024-09-17 21:26:03,023 - INFO - Starting processing.
+2024-09-17 21:26:03,023 - INFO - Loading documents from sql source.
+2024-09-17 21:26:03,023 - INFO - Connecting to MySQL database.
+2024-09-17 21:26:03,041 - INFO - Executing query.
+2024-09-17 21:26:03,071 - INFO - Fetched 121 rows from the database.
+2024-09-17 21:26:03,072 - INFO - MySQL connection closed.
+2024-09-17 21:26:03,073 - INFO - Splitting text into chunks.
+2024-09-17 21:26:03,101 - INFO - Creating vector store using FAISS.
+2024-09-17 21:30:25,273 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=300, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=/home/tathiana/PycharmProjects/MyVecStore/data/sql_l2
+2024-09-17 21:30:25,273 - INFO - Starting processing.
+2024-09-17 21:30:25,273 - INFO - Loading documents from sql source.
+2024-09-17 21:30:25,273 - INFO - Connecting to MySQL database.
+2024-09-17 21:30:25,291 - INFO - Executing query.
+2024-09-17 21:30:25,344 - INFO - Fetched 121 rows from the database.
+2024-09-17 21:30:25,346 - INFO - MySQL connection closed.
+2024-09-17 21:30:25,346 - INFO - Splitting text into chunks.
+2024-09-17 21:30:25,374 - INFO - Creating vector store using FAISS.
+2024-09-17 21:34:13,400 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_l2
+2024-09-17 21:34:13,411 - INFO - Processing completed in 228.14 seconds.
