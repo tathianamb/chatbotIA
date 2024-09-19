@@ -125,7 +125,7 @@ if __name__ == "__main__":
     
     processor = DataToVectorStoreProcessor(source_type="sql",
                                            source_config=db_config,
-                                           chunk_size=300,
+                                           chunk_size=600,
                                            chunk_overlap=100,
                                            distance_strategy='l2')
     processor.process()
