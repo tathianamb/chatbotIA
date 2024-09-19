@@ -1,0 +1,123 @@
+2024-09-18 11:58:08,699 - INFO - Initial payload configuration: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": []
+}
+2024-09-18 11:58:08,725 - DEBUG - Using proactor: IocpProactor
+2024-09-18 11:59:58,176 - INFO - Added message to payload - {'role': 'user', 'content': 'Fale sobre a reuniao dos forrozeiros'}
+2024-09-18 11:59:58,178 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-09-18 12:00:00,524 - DEBUG - http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-09-18 12:00:00,530 - DEBUG - Retrieved documents with relevance scores: [
+  {
+    "document": "quatro reuniões com Forrozeiros do estado do Rio Grande do Norte, entre os meses de setembro a  novembro de 2022, com o propósito de definir objetivos e ações planejadas pelos detentores. O Fórum do Forró de Raiz, na figura de Jarbas do Acordeon, esteve a frente da mobilização dos dos forrozeiros",
+    "relevance_score": 267.6463623046875
+  },
+  {
+    "document": "Uma terceira reunião foi marcada para o dia 13/09, no entanto essa não ocorreu por falta de quórum. Foi, então, marcada uma nova data para a reunião, o dia 11/10, dessa vez às 18h30.  A reunião ocorreu no dia planejado, com quatro pessoas presentes.",
+    "relevance_score": 297.31951904296875
+  }
+]
+2024-09-18 12:00:00,530 - INFO - Added message to payload - {'role': 'system', 'content': 'Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto relevante: quatro reuniões com Forrozeiros do estado do Rio Grande do Norte, entre os meses de setembro a  novembro de 2022, com o propósito de definir objetivos e ações planejadas pelos detentores. O Fórum do Forró de Raiz, na figura de Jarbas do Acordeon, esteve a frente da mobilização dos dos forrozeiros\nUma terceira reunião foi marcada para o dia 13/09, no entanto essa não ocorreu por falta de quórum. Foi, então, marcada uma nova data para a reunião, o dia 11/10, dessa vez às 18h30.  A reunião ocorreu no dia planejado, com quatro pessoas presentes.'}
+2024-09-18 12:00:00,530 - INFO - Sending request to API
+2024-09-18 12:00:00,530 - DEBUG - Sent payload: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Fale sobre a reuniao dos forrozeiros"
+    },
+    {
+      "role": "system",
+      "content": "Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto relevante: quatro reuniões com Forrozeiros do estado do Rio Grande do Norte, entre os meses de setembro a  novembro de 2022, com o propósito de definir objetivos e ações planejadas pelos detentores. O Fórum do Forró de Raiz, na figura de Jarbas do Acordeon, esteve a frente da mobilização dos dos forrozeiros\nUma terceira reunião foi marcada para o dia 13/09, no entanto essa não ocorreu por falta de quórum. Foi, então, marcada uma nova data para a reunião, o dia 11/10, dessa vez às 18h30.  A reunião ocorreu no dia planejado, com quatro pessoas presentes."
+    }
+  ]
+}
+2024-09-18 12:00:00,531 - DEBUG - Starting new HTTP connection (1): www.api.nice.ibict.br:80
+2024-09-18 12:00:03,952 - DEBUG - http://www.api.nice.ibict.br:80 "POST /ibictLLM HTTP/11" 200 None
+2024-09-18 12:00:03,953 - DEBUG - Received response from API with status code: 200
+2024-09-18 12:00:03,953 - DEBUG - Response content: {"eval_count":352,"done":true,"done_reason":"stop","total_duration":3347673422,"load_duration":879260,"prompt_eval_duration":28006000,"created_at":"2024-09-18T15:00:18.063539761Z","license":"IBICT/CGTI","message":{"content":"Fale sobre a reuniao dos forrozeiros!\n\nEm setembro de 2022, uma iniciativa histórica foi tomada pela comunidade de Forrozeiros do estado do Rio Grande do Norte: a reunião dos forrozeiros. O objetivo era unir esforços e definir objetivos e ações planejadas para o futuro da 
+2024-09-18 12:00:03,953 - INFO - Added message to payload - {'role': 'chatbot', 'content': 'Fale sobre a reuniao dos forrozeiros!\n\nEm setembro de 2022, uma iniciativa histórica foi tomada pela comunidade de Forrozeiros do estado do Rio Grande do Norte: a reunião dos forrozeiros. O objetivo era unir esforços e definir objetivos e ações planejadas para o futuro da arte e cultura forrória.\n\nA primeira reunião, marcada para setembro, contou com a presença de jarbas do Acordeon, figura emblemática do Fórum do Forró de Raiz. Ele esteve à frente da mobilização dos forrozeiros, reunindo-os para discutir e planejar o caminho a seguir.\n\nUma terceira reunião foi marcada para o dia 13 de setembro, mas infelizmente não ocorreu por falta de quórum. Não desanimados, os organizadores decidiram marcar uma nova data para a reunião: o dia 11 de outubro.\n\nE então, aconteceu! A reunião ocorreu no dia planejado, às 18h30, e contou com a presença de quatro pessoas. Nesse ambiente de união e cooperação, os forrozeiros discutiram seus planos e objetivos, trabalhando juntos para promover e fortalecer sua arte e cultura.\n\nEssa reunião foi um passo importante para o futuro da comunidade forrória no estado do Rio Grande do Norte. Ela demonstrou a importância de unir esforços e trabalhar em conjunto para alcançar seus objetivos.'}
+2024-09-18 12:00:03,953 - INFO - ==================================== end question ====================================
+2024-09-18 17:50:54,032 - INFO - Initial payload configuration: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": []
+}
+2024-09-18 17:50:54,068 - DEBUG - Using selector: EpollSelector
+2024-09-18 17:52:01,325 - INFO - Added message to payload - {'role': 'user', 'content': 'Fale sobre a reuniao dos forrozeiros'}
+2024-09-18 17:52:01,327 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-09-18 17:54:24,833 - INFO - Added message to payload - {'role': 'user', 'content': 'Fale sobre a reunião dos forrozeiros'}
+2024-09-18 17:54:24,834 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-09-18 17:56:06,872 - INFO - Initial payload configuration: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": []
+}
+2024-09-18 17:56:06,890 - DEBUG - Using selector: EpollSelector
+2024-09-18 17:57:06,557 - INFO - Initial payload configuration: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": []
+}
+2024-09-18 17:57:06,575 - DEBUG - Using selector: EpollSelector
+2024-09-18 17:59:18,598 - INFO - Added message to payload - {'role': 'user', 'content': 'Fale sobre a reunião dos forrozeiros'}
+2024-09-18 17:59:18,600 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-09-19 16:59:09,105 - INFO - Initial payload configuration: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": []
+}
+2024-09-19 16:59:09,146 - DEBUG - Using selector: EpollSelector
+2024-09-19 16:59:20,455 - INFO - Added message to payload - {'role': 'user', 'content': 'Fale sobre a reunião dos forrozeiros'}
+2024-09-19 16:59:20,457 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-09-19 17:08:00,754 - INFO - Initial payload configuration: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": []
+}
+2024-09-19 17:08:00,775 - DEBUG - Using selector: EpollSelector
+2024-09-19 17:08:39,276 - INFO - Added message to payload - {'role': 'user', 'content': 'Fale sobre a reunião dos forrozeiros'}
+2024-09-19 17:13:23,995 - INFO - Added message to payload - {'role': 'user', 'content': 'Fale sobre a reunião dos forrozeiros'}
