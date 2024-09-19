@@ -295,3 +295,14 @@
 2024-09-17 21:30:25,374 - INFO - Creating vector store using FAISS.
 2024-09-17 21:34:13,400 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_l2
 2024-09-17 21:34:13,411 - INFO - Processing completed in 228.14 seconds.
+2024-09-19 13:56:28,804 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=/home/tathiana/PycharmProjects/MyVecStore/data/sql_l2
+2024-09-19 13:56:28,805 - INFO - Starting processing.
+2024-09-19 13:56:28,805 - INFO - Loading documents from sql source.
+2024-09-19 13:56:28,805 - INFO - Connecting to MySQL database.
+2024-09-19 13:56:28,832 - INFO - Executing query.
+2024-09-19 13:56:28,877 - INFO - Fetched 121 rows from the database.
+2024-09-19 13:56:28,878 - INFO - MySQL connection closed.
+2024-09-19 13:56:28,879 - INFO - Splitting text into chunks.
+2024-09-19 13:56:28,899 - INFO - Creating vector store using FAISS.
+2024-09-19 13:58:43,132 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_l2
+2024-09-19 13:58:43,137 - INFO - Processing completed in 134.33 seconds.
