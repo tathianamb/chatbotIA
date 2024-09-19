@@ -8,9 +8,6 @@ import numpy as np
 
 
 class IBICTChatbot:
-    BOLD = '\033[1m'
-    RED = '\033[31m'
-    RESET = '\033[0m'
 
     def __init__(self, api_url, api_key, model=None, temperature=None, num_ctx=None, keep_alive=None, seed=None):
         self.api_url = api_url
@@ -55,7 +52,7 @@ class IBICTChatbot:
 
     def _retrieve_docs(self, user_question, vector_store_path, k=2):
 
-        embeddings = OllamaEmbeddings(model="nomic-embed-text")
+        embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_BASE_URL"), model=self.model_name)
         user_question_embedding = np.array(embeddings.embed_query(user_question)).astype("float32").reshape(1, -1)
 
         index, text_chunks = self.load_vector_store_and_chunks(vector_store_path)
@@ -91,31 +88,20 @@ class IBICTChatbot:
             logging.error(f'Request failed: {e}')
             raise
 
-    def _get_response(self, user_message, vector_store_path):
+    def get_response(self, user_message, vector_store_path):
         self._set_messages("user", user_message)
 
         docs = self._retrieve_docs(user_message, vector_store_path)
         context = self._build_context(docs)
 
-        self._set_messages("system", f"Com base nas informações disponíveis, utilize uma linguagem simpática e culta para fornecer uma resposta acolhedora e informativa. Aqui está o contexto relevante: {context}")
+        self._set_messages("system", f"Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto relevante: {context}")
 
         response_data = self._send_request()
         answer = response_data.get("message", {}).get("content", "No content found.")
 
         self._set_messages("chatbot", answer)
 
-        print(f"{self.BOLD}{self.RED}IBICT-LLM:{self.RESET} {answer}\n")
         self.payload['messages'].clear()
-        logging.info('Cleared messages from payload.')
+        logging.info('==================================== end question ====================================')
 
         return answer
-
-    def run(self, vector_store_path):
-        print("Comece a conversar com a LLM do IBICT (Escreva 'quit' para interromper o programa)\n")
-
-        while True:
-            user_message = input("USUÁRIO:  ")
-            if user_message.lower() == "quit":
-                break
-            self._get_response(user_message, vector_store_path)
-
