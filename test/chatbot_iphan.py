@@ -36,7 +36,7 @@ def test_questions_distance_strategies():
         logging.info('Testing with distance strategy: %s', strategy)
         chatbot = IBICTChatbot(api_url=api_url, api_key=api_key)
         for question in questions:
-            chatbot._get_response(user_message=question, vector_store_path=vector_store_path)
+            chatbot.get_response(user_message=question, vector_store_path=vector_store_path)
             time.sleep(5)
 
 if __name__ == "__main__":
