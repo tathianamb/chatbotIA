@@ -19,8 +19,7 @@ logging.basicConfig(
 logging.getLogger('faiss').setLevel(logging.WARNING)
 
 app = FastAPI()
-
-api_url = "http://www.api.nice.ibict.br/ibictLLM"
+api_url = "https://api-nice.ibict.br/ibictLLM"
 api_key = os.getenv('LLMIBICT')
 
 vector_file_name = 'sql_l2'
@@ -41,3 +40,11 @@ async def ask_chatbot(chat_request: ChatRequest):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+"""
+curl -X POST http://localhost:8000/chatbot-iphan-obs/ \
+     -H "Content-Type: application/json" \
+     -d '{"question": "Qual é a capital do Brasil?"}'
+     
+http://localhost:8000/docs#/
+"""
