@@ -306,3 +306,311 @@
 2024-09-19 13:56:28,899 - INFO - Creating vector store using FAISS.
 2024-09-19 13:58:43,132 - INFO - Saving vector store to /home/tathiana/PycharmProjects/MyVecStore/data/sql_l2
 2024-09-19 13:58:43,137 - INFO - Processing completed in 134.33 seconds.
+2025-01-31 18:54:21,174 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=json, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\json_l2
+2025-01-31 18:54:26,520 - INFO - Loading documents from json source.
+2025-01-31 18:54:47,377 - INFO - Loading documents from json source.
+2025-01-31 18:54:57,277 - INFO - Loading documents from json source.
+2025-01-31 18:56:51,250 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-01-31 18:56:57,443 - INFO - Loading documents from sql source.
+2025-01-31 18:56:57,443 - INFO - Connecting to MySQL database.
+2025-01-31 18:56:57,470 - INFO - Executing query.
+2025-01-31 18:56:57,505 - INFO - Fetched 121 rows from the database.
+2025-01-31 18:56:57,505 - INFO - MySQL connection closed.
+2025-01-31 19:29:14,552 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-01-31 19:29:14,552 - INFO - Loading documents from sql source.
+2025-01-31 19:29:14,552 - INFO - Connecting to MySQL database.
+2025-01-31 19:29:14,568 - INFO - Executing query.
+2025-01-31 19:29:14,595 - INFO - Fetched 121 rows from the database.
+2025-01-31 19:29:14,595 - INFO - MySQL connection closed.
+2025-02-03 09:59:05,053 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 09:59:05,053 - INFO - Loading documents from sql source.
+2025-02-03 09:59:05,053 - INFO - Connecting to MySQL database.
+2025-02-03 10:00:15,915 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:00:15,915 - INFO - Loading documents from sql source.
+2025-02-03 10:00:15,915 - INFO - Connecting to MySQL database.
+2025-02-03 10:00:15,938 - INFO - Executing query.
+2025-02-03 10:00:16,041 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:00:16,042 - INFO - MySQL connection closed.
+2025-02-03 10:03:02,777 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:03:02,777 - INFO - Loading documents from sql source.
+2025-02-03 10:03:02,777 - INFO - Connecting to MySQL database.
+2025-02-03 10:03:02,794 - INFO - Executing query.
+2025-02-03 10:03:02,809 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:03:02,809 - INFO - MySQL connection closed.
+2025-02-03 10:04:42,276 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:04:42,276 - INFO - Loading documents from sql source.
+2025-02-03 10:04:42,276 - INFO - Connecting to MySQL database.
+2025-02-03 10:04:42,291 - INFO - Executing query.
+2025-02-03 10:04:42,367 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:04:42,368 - INFO - MySQL connection closed.
+2025-02-03 10:05:00,467 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:05:00,467 - INFO - Loading documents from sql source.
+2025-02-03 10:05:00,467 - INFO - Connecting to MySQL database.
+2025-02-03 10:05:00,482 - INFO - Executing query.
+2025-02-03 10:05:00,558 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:05:00,559 - INFO - MySQL connection closed.
+2025-02-03 10:05:46,770 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:05:46,770 - INFO - Loading documents from sql source.
+2025-02-03 10:05:46,770 - INFO - Connecting to MySQL database.
+2025-02-03 10:05:46,786 - INFO - Executing query.
+2025-02-03 10:05:46,814 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:05:46,817 - INFO - MySQL connection closed.
+2025-02-03 10:10:37,428 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:10:37,429 - INFO - Loading documents from sql source.
+2025-02-03 10:10:37,429 - INFO - Connecting to MySQL database.
+2025-02-03 10:10:37,443 - INFO - Executing query.
+2025-02-03 10:10:37,521 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:10:37,522 - INFO - MySQL connection closed.
+2025-02-03 10:11:03,315 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:11:03,315 - INFO - Loading documents from sql source.
+2025-02-03 10:11:03,315 - INFO - Connecting to MySQL database.
+2025-02-03 10:11:03,329 - INFO - Executing query.
+2025-02-03 10:11:03,407 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:11:03,408 - INFO - MySQL connection closed.
+2025-02-03 10:11:26,228 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:11:26,238 - INFO - Loading documents from sql source.
+2025-02-03 10:11:26,238 - INFO - Connecting to MySQL database.
+2025-02-03 10:11:26,254 - INFO - Executing query.
+2025-02-03 10:11:26,274 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:11:26,274 - INFO - MySQL connection closed.
+2025-02-03 10:13:32,509 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:13:32,509 - INFO - Loading documents from sql source.
+2025-02-03 10:13:32,509 - INFO - Connecting to MySQL database.
+2025-02-03 10:13:32,525 - INFO - Executing query.
+2025-02-03 10:13:32,544 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:13:32,544 - INFO - MySQL connection closed.
+2025-02-03 10:14:57,887 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:14:57,887 - INFO - Loading documents from sql source.
+2025-02-03 10:14:57,887 - INFO - Connecting to MySQL database.
+2025-02-03 10:14:57,903 - INFO - Executing query.
+2025-02-03 10:14:57,933 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:14:57,933 - INFO - MySQL connection closed.
+2025-02-03 10:18:48,562 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:18:48,562 - INFO - Loading documents from sql source.
+2025-02-03 10:18:48,562 - INFO - Connecting to MySQL database.
+2025-02-03 10:18:48,577 - INFO - Executing query.
+2025-02-03 10:18:48,656 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:18:48,657 - INFO - MySQL connection closed.
+2025-02-03 10:19:30,717 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:19:30,718 - INFO - Loading documents from sql source.
+2025-02-03 10:19:30,718 - INFO - Connecting to MySQL database.
+2025-02-03 10:19:30,733 - INFO - Executing query.
+2025-02-03 10:19:30,813 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:19:30,814 - INFO - MySQL connection closed.
+2025-02-03 10:31:48,906 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:31:48,906 - INFO - Loading documents from sql source.
+2025-02-03 10:31:48,906 - INFO - Connecting to MySQL database.
+2025-02-03 10:31:48,922 - INFO - Executing query.
+2025-02-03 10:31:48,944 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:31:48,944 - INFO - MySQL connection closed.
+2025-02-03 10:34:31,293 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:34:31,293 - INFO - Loading documents from sql source.
+2025-02-03 10:34:31,293 - INFO - Connecting to MySQL database.
+2025-02-03 10:34:31,309 - INFO - Executing query.
+2025-02-03 10:34:31,326 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:34:31,326 - INFO - MySQL connection closed.
+2025-02-03 10:59:03,166 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 10:59:03,166 - INFO - Loading documents from sql source.
+2025-02-03 10:59:03,166 - INFO - Connecting to MySQL database.
+2025-02-03 10:59:03,181 - INFO - Executing query.
+2025-02-03 10:59:03,203 - INFO - Fetched 121 rows from the database.
+2025-02-03 10:59:03,204 - INFO - MySQL connection closed.
+2025-02-03 11:00:06,371 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-03 11:00:06,372 - INFO - Starting processing.
+2025-02-03 11:00:06,372 - INFO - Loading documents from sql source.
+2025-02-03 11:00:06,372 - INFO - Connecting to MySQL database.
+2025-02-03 11:00:06,432 - INFO - Executing query.
+2025-02-03 11:00:06,454 - INFO - Fetched 121 rows from the database.
+2025-02-03 11:00:06,455 - INFO - MySQL connection closed.
+2025-02-03 11:00:06,455 - INFO - Splitting text into chunks.
+2025-02-03 11:00:06,480 - INFO - Creating vector store using FAISS.
+2025-02-04 09:29:29,024 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-04 09:29:29,024 - INFO - Starting processing.
+2025-02-04 09:29:29,024 - INFO - Loading documents from sql source.
+2025-02-04 09:29:29,024 - INFO - Connecting to MySQL database.
+2025-02-04 09:29:29,059 - INFO - Executing query.
+2025-02-04 09:29:29,104 - INFO - Fetched 121 rows from the database.
+2025-02-04 09:29:29,108 - INFO - MySQL connection closed.
+2025-02-04 09:29:35,078 - INFO - Splitting text into chunks.
+2025-02-04 09:29:52,320 - INFO - Creating vector store using FAISS.
+2025-02-04 09:31:42,184 - INFO - Creating vector store using FAISS.
+2025-02-04 09:32:33,307 - INFO - Creating vector store using FAISS.
+2025-02-04 09:32:59,649 - INFO - Splitting text into chunks.
+2025-02-04 09:32:59,722 - INFO - Creating vector store using FAISS.
+2025-02-04 09:33:17,734 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-04 09:33:17,734 - INFO - Starting processing.
+2025-02-04 09:33:17,734 - INFO - Loading documents from sql source.
+2025-02-04 09:33:17,734 - INFO - Connecting to MySQL database.
+2025-02-04 09:33:17,750 - INFO - Executing query.
+2025-02-04 09:33:17,771 - INFO - Fetched 121 rows from the database.
+2025-02-04 09:33:17,771 - INFO - MySQL connection closed.
+2025-02-04 09:33:30,558 - INFO - Creating vector store using FAISS.
+2025-02-04 09:34:35,413 - INFO - Creating vector store using FAISS.
+2025-02-04 09:34:51,566 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_l2
+2025-02-04 09:34:51,566 - INFO - Starting processing.
+2025-02-04 09:34:51,566 - INFO - Loading documents from sql source.
+2025-02-04 09:34:51,566 - INFO - Connecting to MySQL database.
+2025-02-04 09:34:51,583 - INFO - Executing query.
+2025-02-04 09:34:51,605 - INFO - Fetched 121 rows from the database.
+2025-02-04 09:34:51,605 - INFO - MySQL connection closed.
+2025-02-04 09:34:51,605 - INFO - Creating vector store using FAISS.
+2025-02-04 09:46:43,936 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_inner_product
+2025-02-04 09:46:43,937 - INFO - Starting processing.
+2025-02-04 09:46:43,937 - INFO - Loading documents from sql source.
+2025-02-04 09:46:43,937 - INFO - Connecting to MySQL database.
+2025-02-04 09:46:44,028 - INFO - Executing query.
+2025-02-04 09:46:44,051 - INFO - Fetched 121 rows from the database.
+2025-02-04 09:46:44,051 - INFO - MySQL connection closed.
+2025-02-04 09:46:44,052 - INFO - Creating vector store using FAISS.
+2025-02-04 12:51:55,848 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 12:51:55,849 - INFO - Starting processing.
+2025-02-04 12:51:55,849 - INFO - Loading documents from sql source.
+2025-02-04 12:51:55,849 - INFO - Connecting to MySQL database.
+2025-02-04 12:54:27,722 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 12:54:27,722 - INFO - Starting processing.
+2025-02-04 12:54:27,722 - INFO - Loading documents from sql source.
+2025-02-04 12:54:27,722 - INFO - Connecting to MySQL database.
+2025-02-04 13:09:40,790 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:09:40,790 - INFO - Starting processing.
+2025-02-04 13:09:40,790 - INFO - Loading documents from sql source.
+2025-02-04 13:09:40,790 - INFO - Connecting to MySQL database.
+2025-02-04 13:15:20,819 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:15:20,819 - INFO - Starting processing.
+2025-02-04 13:15:20,819 - INFO - Loading documents from sql source.
+2025-02-04 13:15:20,819 - INFO - Connecting to MySQL database.
+2025-02-04 13:16:45,211 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:16:45,212 - INFO - Starting processing.
+2025-02-04 13:16:45,212 - INFO - Loading documents from sql source.
+2025-02-04 13:16:45,212 - INFO - Connecting to MySQL database.
+2025-02-04 13:21:32,291 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:21:32,292 - INFO - Starting processing.
+2025-02-04 13:21:32,292 - INFO - Loading documents from sql source.
+2025-02-04 13:21:32,292 - INFO - Connecting to MySQL database.
+2025-02-04 13:26:14,312 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:26:14,313 - INFO - Starting processing.
+2025-02-04 13:26:14,313 - INFO - Loading documents from sql source.
+2025-02-04 13:26:14,313 - INFO - Connecting to MySQL database.
+2025-02-04 13:27:30,657 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:27:30,657 - INFO - Starting processing.
+2025-02-04 13:27:30,657 - INFO - Loading documents from sql source.
+2025-02-04 13:27:30,657 - INFO - Connecting to MySQL database.
+2025-02-04 13:28:20,664 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:28:20,665 - INFO - Starting processing.
+2025-02-04 13:28:20,665 - INFO - Loading documents from sql source.
+2025-02-04 13:28:20,665 - INFO - Connecting to MySQL database.
+2025-02-04 13:33:57,402 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:33:57,403 - INFO - Starting processing.
+2025-02-04 13:33:57,403 - INFO - Loading documents from sql source.
+2025-02-04 13:33:57,403 - INFO - Connecting to MySQL database.
+2025-02-04 13:34:17,695 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:34:17,695 - INFO - Starting processing.
+2025-02-04 13:34:17,695 - INFO - Loading documents from sql source.
+2025-02-04 13:34:17,696 - INFO - Connecting to MySQL database.
+2025-02-04 13:34:49,054 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:34:49,054 - INFO - Starting processing.
+2025-02-04 13:34:49,055 - INFO - Loading documents from sql source.
+2025-02-04 13:34:49,055 - INFO - Connecting to MySQL database.
+2025-02-04 13:36:24,757 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:36:24,757 - INFO - Starting processing.
+2025-02-04 13:36:24,758 - INFO - Loading documents from sql source.
+2025-02-04 13:36:24,758 - INFO - Connecting to MySQL database.
+2025-02-04 13:37:25,278 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:37:25,278 - INFO - Starting processing.
+2025-02-04 13:37:25,278 - INFO - Loading documents from sql source.
+2025-02-04 13:37:25,278 - INFO - Connecting to MySQL database.
+2025-02-04 13:38:12,039 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:38:12,040 - INFO - Starting processing.
+2025-02-04 13:38:12,040 - INFO - Loading documents from sql source.
+2025-02-04 13:38:12,040 - INFO - Connecting to MySQL database.
+2025-02-04 13:38:33,568 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:38:33,568 - INFO - Starting processing.
+2025-02-04 13:38:33,568 - INFO - Loading documents from sql source.
+2025-02-04 13:38:33,568 - INFO - Connecting to MySQL database.
+2025-02-04 13:38:45,833 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:38:45,833 - INFO - Starting processing.
+2025-02-04 13:38:45,833 - INFO - Loading documents from sql source.
+2025-02-04 13:38:45,833 - INFO - Connecting to MySQL database.
+2025-02-04 13:38:56,833 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:38:56,834 - INFO - Starting processing.
+2025-02-04 13:38:56,834 - INFO - Loading documents from sql source.
+2025-02-04 13:38:56,834 - INFO - Connecting to MySQL database.
+2025-02-04 13:41:39,510 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:41:39,510 - INFO - Starting processing.
+2025-02-04 13:41:39,511 - INFO - Loading documents from sql source.
+2025-02-04 13:41:39,511 - INFO - Connecting to MySQL database.
+2025-02-04 13:42:02,262 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:42:02,262 - INFO - Starting processing.
+2025-02-04 13:42:02,262 - INFO - Loading documents from sql source.
+2025-02-04 13:42:02,262 - INFO - Connecting to MySQL database.
+2025-02-04 13:42:54,908 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:42:54,908 - INFO - Starting processing.
+2025-02-04 13:42:54,908 - INFO - Loading documents from sql source.
+2025-02-04 13:42:54,908 - INFO - Connecting to MySQL database.
+2025-02-04 13:43:55,455 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:43:55,455 - INFO - Starting processing.
+2025-02-04 13:43:55,456 - INFO - Loading documents from sql source.
+2025-02-04 13:43:55,456 - INFO - Connecting to MySQL database.
+2025-02-04 13:45:38,653 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:45:38,653 - INFO - Starting processing.
+2025-02-04 13:45:38,653 - INFO - Loading documents from sql source.
+2025-02-04 13:45:38,653 - INFO - Connecting to MySQL database.
+2025-02-04 13:46:19,035 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:46:19,035 - INFO - Starting processing.
+2025-02-04 13:46:19,035 - INFO - Loading documents from sql source.
+2025-02-04 13:46:19,036 - INFO - Connecting to MySQL database.
+2025-02-04 13:47:42,692 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:47:42,693 - INFO - Starting processing.
+2025-02-04 13:47:42,693 - INFO - Loading documents from sql source.
+2025-02-04 13:47:42,693 - INFO - Connecting to MySQL database.
+2025-02-04 13:49:32,054 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:49:32,055 - INFO - Starting processing.
+2025-02-04 13:49:32,055 - INFO - Loading documents from sql source.
+2025-02-04 13:49:32,055 - INFO - Connecting to MySQL database.
+2025-02-04 13:51:56,264 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 13:51:56,265 - INFO - Starting processing.
+2025-02-04 13:51:56,265 - INFO - Loading documents from sql source.
+2025-02-04 13:51:56,265 - INFO - Connecting to MySQL database.
+2025-02-04 14:01:05,409 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 14:01:05,410 - INFO - Starting processing.
+2025-02-04 14:01:05,410 - INFO - Loading documents from sql source.
+2025-02-04 14:01:05,410 - INFO - Connecting to MySQL database.
+2025-02-04 14:01:20,413 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 14:01:20,414 - INFO - Starting processing.
+2025-02-04 14:01:20,414 - INFO - Loading documents from sql source.
+2025-02-04 14:01:20,414 - INFO - Connecting to MySQL database.
+2025-02-04 15:01:34,589 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 15:01:34,590 - INFO - Starting processing.
+2025-02-04 15:01:34,591 - INFO - Loading documents from sql source.
+2025-02-04 15:01:34,591 - INFO - Connecting to MySQL database.
+2025-02-04 12:02:04,852 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=C:\Users\Tathiana\PycharmProjects\MyVecStore\data\sql_inner_product
+2025-02-04 12:02:04,853 - INFO - Starting processing.
+2025-02-04 12:02:04,853 - INFO - Loading documents from sql source.
+2025-02-04 12:02:04,853 - INFO - Connecting to MySQL database.
+2025-02-04 12:02:04,973 - INFO - Executing query.
+2025-02-04 12:02:04,997 - INFO - Fetched 121 rows from the database.
+2025-02-04 12:02:04,998 - INFO - MySQL connection closed.
+2025-02-04 12:02:04,999 - INFO - Creating vector store using FAISS.
+2025-02-04 15:03:53,017 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 15:03:53,017 - INFO - Starting processing.
+2025-02-04 15:03:53,017 - INFO - Loading documents from sql source.
+2025-02-04 15:03:53,018 - INFO - Connecting to MySQL database.
+2025-02-04 15:04:39,621 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-04 15:04:39,621 - INFO - Starting processing.
+2025-02-04 15:04:39,622 - INFO - Loading documents from sql source.
+2025-02-04 15:04:39,622 - INFO - Connecting to MySQL database.
+2025-02-04 15:04:39,646 - INFO - Executing query.
+2025-02-04 15:04:39,668 - INFO - Fetched 121 rows from the database.
+2025-02-04 15:04:39,670 - INFO - MySQL connection closed.
+2025-02-04 15:04:39,671 - INFO - Creating vector store using FAISS.
+2025-02-04 15:06:02,438 - INFO - Saving vector store to /app/data/sql_inner_product
+2025-02-04 15:06:02,442 - INFO - Processing completed in 82.82 seconds.
+2025-02-04 19:33:45,057 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=600, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-04 19:33:45,057 - INFO - Starting processing.
+2025-02-04 19:33:45,057 - INFO - Loading documents from sql source.
+2025-02-04 19:33:45,058 - INFO - Connecting to MySQL database.
+2025-02-04 19:33:45,088 - INFO - Executing query.
+2025-02-04 19:33:45,111 - INFO - Fetched 121 rows from the database.
+2025-02-04 19:33:45,113 - INFO - MySQL connection closed.
+2025-02-04 19:33:45,114 - INFO - Creating vector store using FAISS.
+2025-02-04 19:35:14,931 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-04 19:35:14,937 - INFO - Processing completed in 89.88 seconds.
