@@ -114,15 +114,13 @@ if __name__ == "__main__":
 
     db_config = {
         'query': query,
-        'host': 'localhost',
+        'host': 'mysqldb', #172.16.21.25
         'port': 3306,
         'user': 'user_leitura',
         'password': 'senha@123',
         'database': 'dbwordpress'
     }
 
-    save_path = os.path.normpath(os.path.join(script_dir, '..', 'data', 'sql_MAX_INNER_PRODUCT_index'))
-    
     processor = DataToVectorStoreProcessor(source_type="sql",
                                            source_config=db_config,
                                            chunk_size=600,
