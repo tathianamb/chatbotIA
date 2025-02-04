@@ -1,45 +1,18 @@
-import mysql.connector
-from langchain.schema import Document
-import logging
+from nltk.tokenize import word_tokenize
+import re
+from nltk.corpus import stopwords
+import spacy
+
+nlp = spacy.load("pt_core_news_sm")
+stop_words = set(stopwords.words('portuguese'))
 
 
-class MySQLLoader:
-    def __init__(self, query, host, port, user, password, database):
-        self.query = query
-        self.host = host
-        self.port = port
-        self.user = user
-        self.password = password
-        self.database = database
+def process_text(text):
+    words = word_tokenize(text.lower(), language="portuguese")
+    words = [re.sub(r"[^\w\s]", "", word) for word in words if word.isalpha()]
+    words = [word for word in words if word not in stop_words]
 
-    def _connect(self):
-        return mysql.connector.connect(
-            host=self.host,
-            port=self.port,
-            user=self.user,
-            password=self.password,
-            database=self.database
-        )
+    doc = nlp(" ".join(words))
+    lemmatized_words = [token.lemma_ for token in doc]
 
-    def load(self):
-        logging.info("Connecting to MySQL database.")
-        connection = self._connect()
-        cursor = connection.cursor(dictionary=True)
-
-        try:
-            logging.info("Executing query.")
-            cursor.execute(self.query)
-            rows = cursor.fetchall()
-
-            logging.info(f"Fetched {len(rows)} rows from the database.")
-            documents = []
-            for row in rows:
-                content = " ".join([f"{key}: {value}" for key, value in row.items()])
-                documents.append(Document(page_content=content))
-
-            return documents
-
-        finally:
-            cursor.close()
-            connection.close()
-            logging.info("MySQL connection closed.")
+    return " ".join(words)
