@@ -6,7 +6,7 @@ import numpy as np
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores.faiss import DistanceStrategy
 import time
-from vendor.utils import MySQLLoader
+from vendor.MySQLLoader import MySQLLoader
 import logging
 import json
 import os
@@ -51,7 +51,6 @@ class DataToVectorStoreProcessor:
                 jq_schema=self.source_config['jq_schema'],
                 text_content=False
             )
-            return loader.load()
         else:
             raise ValueError(f"Invalid source_type: {self.source_type}. Must be 'csv', 'json' or 'sql'.")
 
@@ -105,9 +104,11 @@ class DataToVectorStoreProcessor:
         logging.info("Starting processing.")
         start_time = time.time()
 
-        docs = self.load_documents()
-        text_chunks = self.split_texts(docs)
+        docs = self.load_documents() # docs is a Document list
+        #text_chunks = self.split_texts(docs)
+        text_chunks = [doc.page_content for doc in docs]
         vector_store = self.create_vector_store(text_chunks)
+
         self.save_vector_store(vector_store)
 
         end_time = time.time()
