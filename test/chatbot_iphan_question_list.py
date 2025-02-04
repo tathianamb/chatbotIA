@@ -24,7 +24,7 @@ def test_questions_distance_strategies():
         vector_file_name: os.path.normpath(index_path)
     }
     questions = [
-        "Quais foram os principais objetivos das reuniões on-line com os forrozeiros do estado do Piauí para a construção do Plano de Salvaguarda das Matrizes Tradicionais do Forró?",
+        "Quais foram os principais objetivos das reuniões on-line com os forrozeiros da Bahia para a construção do Plano de Salvaguarda das Matrizes Tradicionais do Forró?",
         "Como se deu o processo de mobilização e discussão para a elaboração do Plano Nacional de Salvaguarda da Literatura de Cordel na Bahia?",
         "Quais diretrizes foram discutidas nas reuniões com o Coletivo Carmo para a promoção e salvaguarda dos Mestres de Capoeira Angola?",
         "Quais foram os principais pontos abordados na roda de conversa sobre previdência voltada para os capoeiristas?",
