@@ -614,3 +614,159 @@
 2025-02-04 19:33:45,114 - INFO - Creating vector store using FAISS.
 2025-02-04 19:35:14,931 - INFO - Saving vector store to /app/data/sql_l2
 2025-02-04 19:35:14,937 - INFO - Processing completed in 89.88 seconds.
+2025-02-05 14:37:58,692 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=500, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-05 14:37:58,693 - INFO - Starting processing.
+2025-02-05 14:37:58,693 - INFO - Loading documents from sql source.
+2025-02-05 14:37:58,693 - INFO - Connecting to MySQL database.
+2025-02-05 14:37:58,734 - INFO - Executing query.
+2025-02-05 14:37:58,782 - INFO - Fetched 121 rows from the database.
+2025-02-05 14:37:58,785 - INFO - MySQL connection closed.
+2025-02-05 14:37:58,785 - INFO - Splitting text into chunks.
+2025-02-05 14:37:58,820 - INFO - Creating vector store using FAISS.
+2025-02-05 14:40:18,170 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-05 14:40:18,183 - INFO - Processing completed in 139.49 seconds.
+2025-02-05 14:44:22,800 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=500, chunk_overlap=100, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-05 14:44:22,801 - INFO - Starting processing.
+2025-02-05 14:44:22,801 - INFO - Loading documents from sql source.
+2025-02-05 14:44:22,801 - INFO - Connecting to MySQL database.
+2025-02-05 14:44:22,830 - INFO - Executing query.
+2025-02-05 14:44:22,879 - INFO - Fetched 121 rows from the database.
+2025-02-05 14:44:22,881 - INFO - MySQL connection closed.
+2025-02-05 14:44:22,882 - INFO - Splitting text into chunks.
+2025-02-05 14:44:22,916 - INFO - Creating vector store using FAISS.
+2025-02-05 14:46:44,572 - INFO - Saving vector store to /app/data/sql_inner_product
+2025-02-05 14:46:44,586 - INFO - Processing completed in 141.78 seconds.
+2025-02-05 14:50:37,048 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-05 14:50:37,048 - INFO - Starting processing.
+2025-02-05 14:50:37,049 - INFO - Loading documents from sql source.
+2025-02-05 14:50:37,049 - INFO - Connecting to MySQL database.
+2025-02-05 14:50:37,074 - INFO - Executing query.
+2025-02-05 14:50:37,098 - INFO - Fetched 121 rows from the database.
+2025-02-05 14:50:37,100 - INFO - MySQL connection closed.
+2025-02-05 14:50:37,100 - INFO - Splitting text into chunks.
+2025-02-05 14:50:37,128 - INFO - Creating vector store using FAISS.
+2025-02-05 14:52:32,776 - INFO - Saving vector store to /app/data/sql_inner_product
+2025-02-05 14:52:32,786 - INFO - Processing completed in 115.74 seconds.
+2025-02-05 17:10:02,520 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-05 17:10:02,521 - INFO - Starting processing.
+2025-02-05 17:10:02,521 - INFO - Loading documents from sql source.
+2025-02-05 17:10:02,521 - INFO - Connecting to MySQL database.
+2025-02-05 17:10:02,547 - INFO - Executing query.
+2025-02-05 17:10:02,571 - INFO - Fetched 121 rows from the database.
+2025-02-05 17:10:02,573 - INFO - MySQL connection closed.
+2025-02-05 17:10:02,574 - INFO - Splitting text into chunks.
+2025-02-05 17:10:02,602 - INFO - Creating vector store using FAISS.
+2025-02-05 17:12:01,691 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-05 17:12:01,701 - INFO - Processing completed in 119.18 seconds.
+2025-02-05 17:17:49,408 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-05 17:17:49,409 - INFO - Starting processing.
+2025-02-05 17:17:49,409 - INFO - Loading documents from sql source.
+2025-02-05 17:17:49,409 - INFO - Connecting to MySQL database.
+2025-02-05 17:17:49,434 - INFO - Executing query.
+2025-02-05 17:17:49,456 - INFO - Fetched 121 rows from the database.
+2025-02-05 17:17:49,459 - INFO - MySQL connection closed.
+2025-02-05 17:17:49,460 - INFO - Splitting text into chunks.
+2025-02-05 17:17:49,482 - INFO - Creating vector store using FAISS.
+2025-02-05 17:19:36,254 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-05 17:19:36,262 - INFO - Processing completed in 106.85 seconds.
+2025-02-05 17:29:54,973 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-05 17:29:54,973 - INFO - Starting processing.
+2025-02-05 17:29:54,973 - INFO - Loading documents from sql source.
+2025-02-05 17:29:54,973 - INFO - Connecting to MySQL database.
+2025-02-05 17:29:54,999 - INFO - Executing query.
+2025-02-05 17:29:55,045 - INFO - Fetched 121 rows from the database.
+2025-02-05 17:29:55,047 - INFO - MySQL connection closed.
+2025-02-05 17:29:55,048 - INFO - Splitting text into chunks.
+2025-02-05 17:29:55,070 - INFO - Creating vector store using FAISS.
+2025-02-05 17:31:44,177 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-05 17:31:44,186 - INFO - Processing completed in 109.21 seconds.
+2025-02-05 17:32:31,262 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-05 17:32:31,263 - INFO - Starting processing.
+2025-02-05 17:32:31,263 - INFO - Loading documents from sql source.
+2025-02-05 17:32:31,263 - INFO - Connecting to MySQL database.
+2025-02-05 17:32:31,289 - INFO - Executing query.
+2025-02-05 17:32:31,314 - INFO - Fetched 121 rows from the database.
+2025-02-05 17:32:31,316 - INFO - MySQL connection closed.
+2025-02-05 17:32:31,317 - INFO - Splitting text into chunks.
+2025-02-05 17:32:31,345 - INFO - Creating vector store using FAISS.
+2025-02-05 17:34:26,869 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-05 17:34:26,878 - INFO - Processing completed in 115.62 seconds.
+2025-02-05 17:41:22,293 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-05 17:41:22,293 - INFO - Starting processing.
+2025-02-05 17:41:22,293 - INFO - Loading documents from sql source.
+2025-02-05 17:41:22,294 - INFO - Connecting to MySQL database.
+2025-02-05 17:41:22,322 - INFO - Executing query.
+2025-02-05 17:41:22,370 - INFO - Fetched 121 rows from the database.
+2025-02-05 17:41:22,372 - INFO - MySQL connection closed.
+2025-02-05 17:41:22,373 - INFO - Splitting text into chunks.
+2025-02-05 17:41:22,400 - INFO - Creating vector store using FAISS.
+2025-02-05 17:43:18,460 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-05 17:43:18,471 - INFO - Processing completed in 116.18 seconds.
+2025-02-05 17:47:57,456 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-05 17:47:57,457 - INFO - Starting processing.
+2025-02-05 17:47:57,457 - INFO - Loading documents from sql source.
+2025-02-05 17:47:57,457 - INFO - Connecting to MySQL database.
+2025-02-05 17:47:57,482 - INFO - Executing query.
+2025-02-05 17:47:57,532 - INFO - Fetched 121 rows from the database.
+2025-02-05 17:47:57,535 - INFO - MySQL connection closed.
+2025-02-05 17:47:57,536 - INFO - Splitting text into chunks.
+2025-02-05 17:47:57,559 - INFO - Creating vector store using FAISS.
+2025-02-05 17:49:47,940 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-05 17:49:47,947 - INFO - Processing completed in 110.49 seconds.
+2025-02-05 17:54:07,529 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=1000, chunk_overlap=200, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-05 17:54:07,529 - INFO - Starting processing.
+2025-02-05 17:54:07,530 - INFO - Loading documents from sql source.
+2025-02-05 17:54:07,530 - INFO - Connecting to MySQL database.
+2025-02-05 17:54:07,554 - INFO - Executing query.
+2025-02-05 17:54:07,579 - INFO - Fetched 121 rows from the database.
+2025-02-05 17:54:07,581 - INFO - MySQL connection closed.
+2025-02-05 17:54:07,582 - INFO - Splitting text into chunks.
+2025-02-05 17:54:07,605 - INFO - Creating vector store using FAISS.
+2025-02-05 17:55:54,049 - INFO - Saving vector store to /app/data/sql_inner_product
+2025-02-05 17:55:54,057 - INFO - Processing completed in 106.53 seconds.
+2025-02-05 17:59:23,103 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=1500, chunk_overlap=300, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-02-05 17:59:23,103 - INFO - Starting processing.
+2025-02-05 17:59:23,103 - INFO - Loading documents from sql source.
+2025-02-05 17:59:23,103 - INFO - Connecting to MySQL database.
+2025-02-05 17:59:23,130 - INFO - Executing query.
+2025-02-05 17:59:23,177 - INFO - Fetched 121 rows from the database.
+2025-02-05 17:59:23,180 - INFO - MySQL connection closed.
+2025-02-05 17:59:23,180 - INFO - Splitting text into chunks.
+2025-02-05 17:59:23,198 - INFO - Creating vector store using FAISS.
+2025-02-05 18:01:01,512 - INFO - Saving vector store to /app/data/sql_inner_product
+2025-02-05 18:01:01,518 - INFO - Processing completed in 98.41 seconds.
+2025-02-05 18:01:01,520 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=1500, chunk_overlap=300, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-02-05 18:01:01,520 - INFO - Starting processing.
+2025-02-05 18:01:01,520 - INFO - Loading documents from sql source.
+2025-02-05 18:01:01,521 - INFO - Connecting to MySQL database.
+2025-02-05 18:01:01,544 - INFO - Executing query.
+2025-02-05 18:01:01,568 - INFO - Fetched 121 rows from the database.
+2025-02-05 18:01:01,570 - INFO - MySQL connection closed.
+2025-02-05 18:01:01,571 - INFO - Splitting text into chunks.
+2025-02-05 18:01:01,590 - INFO - Creating vector store using FAISS.
+2025-02-05 18:02:39,096 - INFO - Saving vector store to /app/data/sql_l2
+2025-02-05 18:02:39,102 - INFO - Processing completed in 97.58 seconds.
+2025-03-05 13:27:25,022 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=inner_product, index_path=/app/data/sql_inner_product
+2025-03-05 13:27:25,023 - INFO - Starting processing.
+2025-03-05 13:27:25,023 - INFO - Loading documents from sql source.
+2025-03-05 13:27:25,023 - INFO - Connecting to MySQL database.
+2025-03-05 13:27:25,055 - INFO - Executing query.
+2025-03-05 13:27:25,124 - INFO - Fetched 121 rows from the database.
+2025-03-05 13:27:25,126 - INFO - MySQL connection closed.
+2025-03-05 13:27:25,126 - INFO - Splitting text into chunks.
+2025-03-05 13:27:25,151 - INFO - Creating vector store using FAISS.
+2025-03-05 13:29:32,048 - INFO - HTTP Request: POST http://ollama:11434/api/embed "HTTP/1.1 200 OK"
+2025-03-05 13:29:32,146 - INFO - Saving vector store to /app/data/sql_inner_product
+2025-03-05 13:29:32,155 - INFO - Processing completed in 127.13 seconds.
+2025-03-05 13:32:25,534 - INFO - Initialized DataToVectorStoreProcessor with parameters: source_type=sql, chunk_size=750, chunk_overlap=150, model_name=nomic-embed-text, distance_strategy=l2, index_path=/app/data/sql_l2
+2025-03-05 13:32:25,534 - INFO - Starting processing.
+2025-03-05 13:32:25,535 - INFO - Loading documents from sql source.
+2025-03-05 13:32:25,535 - INFO - Connecting to MySQL database.
+2025-03-05 13:32:25,558 - INFO - Executing query.
+2025-03-05 13:32:25,582 - INFO - Fetched 121 rows from the database.
+2025-03-05 13:32:25,583 - INFO - MySQL connection closed.
+2025-03-05 13:32:25,584 - INFO - Splitting text into chunks.
+2025-03-05 13:32:25,609 - INFO - Creating vector store using FAISS.
+2025-03-05 13:34:32,281 - INFO - HTTP Request: POST http://ollama:11434/api/embed "HTTP/1.1 200 OK"
+2025-03-05 13:34:32,372 - INFO - Saving vector store to /app/data/sql_l2
+2025-03-05 13:34:32,384 - INFO - Processing completed in 126.85 seconds.
