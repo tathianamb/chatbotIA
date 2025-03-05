@@ -1,10 +1,8 @@
 from langchain_community.document_loaders import CSVLoader, JSONLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS
 import faiss
 import numpy as np
-from langchain_community.embeddings import OllamaEmbeddings
-from langchain_community.vectorstores.faiss import DistanceStrategy
+from langchain_ollama import OllamaEmbeddings
 import time
 from vendor.MySQLLoader import MySQLLoader
 import logging
@@ -13,14 +11,9 @@ import os
 
 
 class DataToVectorStoreProcessor:
-    def __init__(self, source_type, source_config, chunk_size=1000, chunk_overlap=200,
+    def __init__(self, source_type, source_config, chunk_size=750, chunk_overlap=150,
                  model_name="nomic-embed-text", distance_strategy=None, index_path=None):
-        '''
-        if not isinstance(distance_strategy, DistanceStrategy):
-            valid_values = ', '.join(e.name for e in DistanceStrategy)
-            raise ValueError(
-                f"Invalid distance_strategy: {distance_strategy}. Must be one of {valid_values}")
-        '''
+
         self.source_type = source_type
         self.source_config = source_config
         self.chunk_size = chunk_size
@@ -62,15 +55,6 @@ class DataToVectorStoreProcessor:
         split_docs = text_splitter.split_documents(docs)
         return [chunk.page_content for chunk in split_docs]
 
-    '''    
-    def create_vector_store(self, text_chunks):
-        logging.info("Creating vector store.")
-        embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_BASE_URL"), model=self.model_name)
-        vector_store = FAISS.from_texts(text_chunks,
-                                        embedding=embeddings,
-                                        distance_strategy=self.distance_strategy)
-        return vector_store'''
-
 
     def create_vector_store(self, text_chunks):
         logging.info("Creating vector store using FAISS.")
@@ -96,7 +80,6 @@ class DataToVectorStoreProcessor:
 
     def save_vector_store(self, index):
         logging.info(f"Saving vector store to {self.index_path}")
-        #vector_store.save_local(self.index_path)
         faiss.write_index(index, f"{self.index_path}_index")
 
 
@@ -104,9 +87,8 @@ class DataToVectorStoreProcessor:
         logging.info("Starting processing.")
         start_time = time.time()
 
-        docs = self.load_documents() # docs is a Document list
-        #text_chunks = self.split_texts(docs)
-        text_chunks = [doc.page_content for doc in docs]
+        docs = self.load_documents()
+        text_chunks = self.split_texts(docs)
         vector_store = self.create_vector_store(text_chunks)
 
         self.save_vector_store(vector_store)
