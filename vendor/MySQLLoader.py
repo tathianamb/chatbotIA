@@ -14,7 +14,6 @@ class MySQLLoader:
 
     def _connect(self):
         try:
-            print("Conectando...")
             return mysql.connector.connect(
                 host=self.host,
                 port=self.port,
@@ -42,7 +41,6 @@ class MySQLLoader:
             logging.info(f"Fetched {len(rows)} rows from the database.")
             documents = []
             for row in rows:
-                #content = " ".join([f"{key}: {value}" for key, value in row.items()])
                 content = " ".join([f"{value}" for key, value in row.items()])
                 documents.append(Document(page_content=content))
 
