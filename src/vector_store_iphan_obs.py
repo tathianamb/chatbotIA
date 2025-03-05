@@ -13,9 +13,7 @@ logging.basicConfig(
 
 logging.getLogger('faiss').setLevel(logging.WARNING)
 
-
 if __name__ == "__main__":
-
     query = """
     with taxonomy_name AS (
         SELECT 'Classificação da organização' AS taxonomy_name, 237 AS taxonomy_suffix
@@ -114,16 +112,18 @@ if __name__ == "__main__":
 
     db_config = {
         'query': query,
-        'host': 'mysqldb', #172.16.21.25
+        'host': 'mysqldb',  #172.16.21.25
         'port': 3306,
         'user': 'user_leitura',
         'password': 'senha@123',
         'database': 'dbwordpress'
     }
+    chunk_size = 750
+    chunk_overlap = 150
 
     processor = DataToVectorStoreProcessor(source_type="sql",
                                            source_config=db_config,
-                                           chunk_size=600,
-                                           chunk_overlap=100,
-                                           distance_strategy='l2')
+                                           chunk_size=chunk_size,
+                                           chunk_overlap=chunk_overlap,
+                                           distance_strategy='l2')  # l2 or inner_product
     processor.process()
