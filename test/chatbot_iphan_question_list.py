@@ -1,4 +1,4 @@
-from vendor.rag_model import IBICTChatbot
+from vendor.rag_model import chatbot
 import os
 import logging
 import time
@@ -15,10 +15,10 @@ logging.getLogger('faiss').setLevel(logging.WARNING)
 
 
 def test_questions_distance_strategies():
-    vector_file_name = 'sql_l2'
+    vector_file_name = 'sql_l2' #sql_inner_product sql_l2
 
     script_dir = os.path.dirname(os.path.realpath(__file__))
-    index_path = os.path.join(script_dir, '..', 'data', vector_file_name)
+    index_path = os.path.join(script_dir, '..', 'data', 'raw_level', vector_file_name)
 
     vector_store_paths = {
         vector_file_name: os.path.normpath(index_path)
@@ -34,9 +34,9 @@ def test_questions_distance_strategies():
 
     for strategy, vector_store_path in vector_store_paths.items():
         logging.info('Testing with distance strategy: %s', strategy)
-        chatbot = IBICTChatbot(api_url=api_url, api_key=api_key)
+        chatbot = chatbot(api_url=api_url, api_key=api_key)
         for question in questions:
-            chatbot.get_response(user_message=question, vector_store_path=vector_store_path)
+            chatbot.get_response(user_message=question, vector_store_path=vector_store_path, k=1)
             time.sleep(5)
 
 if __name__ == "__main__":
