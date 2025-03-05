@@ -1,4 +1,4 @@
-from vendor.rag_model import IBICTChatbot
+from vendor.rag_model import chatbot
 import os
 import logging
 import time
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     index_path = os.path.join(script_dir, '..', 'data', 'sql_l2')
     vector_store_path = os.path.normpath(index_path)
 
-    chatbot = IBICTChatbot(api_url, api_key)
+    chatbot = chatbot(api_url, api_key)
 
     while True:
         pergunta = input("Pergunta (ou digite 'sair' para encerrar): ")
