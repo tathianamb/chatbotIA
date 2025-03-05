@@ -1,16 +1,15 @@
 import json
 import requests
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_ollama import OllamaEmbeddings
 import logging
 import faiss
 import numpy as np
 import os
-from vendor.utils import process_text
+import time
 
+class chatbot:
 
-class IBICTChatbot:
-
-    def __init__(self, api_url, api_key, model='base:8b', model_name="nomic-embed-text", temperature=None, num_ctx=None, keep_alive=None, seed=None):
+    def __init__(self, api_url, api_key, model='llama3.1:8b', model_name="nomic-embed-text", temperature=None, num_ctx=None, keep_alive=None, seed=None):
         self.api_url = api_url
         self.api_key = api_key
         self.model_name = model_name
@@ -53,7 +52,11 @@ class IBICTChatbot:
 
         index, text_chunks = self.load_vector_store_and_chunks(vector_store_path)
 
+        start_time = time.perf_counter_ns()
         D, I = index.search(user_question_embedding, k)
+        total_time = time.perf_counter_ns() - start_time
+        logging.debug('Time per query in nanoseconds: %s',
+                      json.dumps(total_time, ensure_ascii=False, indent=2))
 
         results = [text_chunks[i] for i in I[0]]
 
@@ -84,14 +87,11 @@ class IBICTChatbot:
             logging.error(f'Request failed: {e}')
             raise
 
-    def get_response(self, user_message, vector_store_path, to_rewrite_query=False):
+    def get_response(self, user_message, vector_store_path, k, to_rewrite_query=False):
         self._set_messages("user", user_message)
         terms_retrieve_docs = user_message
-        if to_rewrite_query:
 
-            terms_retrieve_docs = process_text(user_message)
-
-        docs = self._retrieve_docs(terms_retrieve_docs, vector_store_path)
+        docs = self._retrieve_docs(terms_retrieve_docs, vector_store_path, k)
         context = self._build_context(docs)
 
         self._set_messages("system", f"Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: {context}")
