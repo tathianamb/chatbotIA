@@ -1,0 +1,242 @@
+2025-02-06 10:29:45,313 - INFO - Testing with distance strategy: sql_inner_product
+2025-02-06 10:29:45,313 - INFO - Initial payload configuration: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": []
+}
+2025-02-06 10:29:45,313 - INFO - Added message to payload - {'role': 'user', 'content': 'Quais foram os principais objetivos das reuniões on-line com os forrozeiros da Bahia para a construção do Plano de Salvaguarda das Matrizes Tradicionais do Forró?'}
+2025-02-06 10:29:45,315 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-02-06 10:29:47,398 - DEBUG - http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2025-02-06 10:29:47,402 - DEBUG - Time per query in nanoseconds: 2058000
+2025-02-06 10:29:47,402 - DEBUG - Retrieved documents with distances: [
+  {
+    "document": "Coleção: Ações Título: Plano de Salvaguarda das Matrizes Tradicionais do Forró na Bahia Descrição: A presente ação de salvaguarda é resultado do processo realizado junto aos detentores das Matrizes Tradicionais do Forró no Estado da Bahia para a elaboração das ações de salvaguarda que integrarão o Plano de Salvaguarda nacional desse Bem Cultural, registrado no ano de 2021. Diante da impossibilidade de realizarmos reuniões no interior do estado e em conversa com os detentores que já estavam mobilizados desde o contexto de registro do bem, optamos por realizar reuniões virtuais para discutir e consolidar as ações de salvaguarda das Matrizes Tradicionais do Forró no contexto baiano.",
+    "distance": 228.27659606933594
+  },
+  {
+    "document": "Coleção: Ações Título: Elaboração do Plano de Salvaguarda - Ceará Descrição: Buscando atender a solicitação de coleta de dados regionais para a composição do Plano de Salvaguarda das Matrizes Tradicionais do Forró (MTF), realizamos seis reuniões com pessoas no estado com alguma ligação com essa manifestação cultural, como músicos, dançarinos e dirigentes de grupos. As reuniões ocorreram todas de forma online pela plataforma MEET. Em anexo,  temos a lista dos presentes nas reuniões.",
+    "distance": 222.77294921875
+  },
+  {
+    "document": "Coleção: Ações Título: Plano de Salvaguarda das Matrizes do Forró Descrição: Tendo em vista o processo de elaboração do Plano de Salvaguarda das Matrizes do Forró, ocorreram quatro reuniões com Forrozeiros do estado do Rio Grande do Norte, entre os meses de setembro a  novembro de 2022, com o propósito de definir objetivos e ações planejadas pelos detentores. O Fórum do Forró de Raiz, na figura de Jarbas do Acordeon, esteve a frente da mobilização dos dos forrozeiros para participação nas reuniões, que aconteceram de modo virtual e foram transmitidas ao vivo através do canal do Forró de Raiz RN no Youtube, onde estão registradas: https://www.youtube.com/@forroderaizrn3447 . No total, houve a participação de uma média de 15 forrozeiros.",
+    "distance": 218.67178344726562
+  }
+]
+2025-02-06 10:29:47,403 - INFO - Added message to payload - {'role': 'system', 'content': 'Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Coleção: Ações Título: Plano de Salvaguarda das Matrizes Tradicionais do Forró na Bahia Descrição: A presente ação de salvaguarda é resultado do processo realizado junto aos detentores das Matrizes Tradicionais do Forró no Estado da Bahia para a elaboração das ações de salvaguarda que integrarão o Plano de Salvaguarda nacional desse Bem Cultural, registrado no ano de 2021. Diante da impossibilidade de realizarmos reuniões no interior do estado e em conversa com os detentores que já estavam mobilizados desde o contexto de registro do bem, optamos por realizar reuniões virtuais para discutir e consolidar as ações de salvaguarda das Matrizes Tradicionais do Forró no contexto baiano.\nColeção: Ações Título: Elaboração do Plano de Salvaguarda - Ceará Descrição: Buscando atender a solicitação de coleta de dados regionais para a composição do Plano de Salvaguarda das Matrizes Tradicionais do Forró (MTF), realizamos seis reuniões com pessoas no estado com alguma ligação com essa manifestação cultural, como músicos, dançarinos e dirigentes de grupos. As reuniões ocorreram todas de forma online pela plataforma MEET. Em anexo,  temos a lista dos presentes nas reuniões.\nColeção: Ações Título: Plano de Salvaguarda das Matrizes do Forró Descrição: Tendo em vista o processo de elaboração do Plano de Salvaguarda das Matrizes do Forró, ocorreram quatro reuniões com Forrozeiros do estado do Rio Grande do Norte, entre os meses de setembro a  novembro de 2022, com o propósito de definir objetivos e ações planejadas pelos detentores. O Fórum do Forró de Raiz, na figura de Jarbas do Acordeon, esteve a frente da mobilização dos dos forrozeiros para participação nas reuniões, que aconteceram de modo virtual e foram transmitidas ao vivo através do canal do Forró de Raiz RN no Youtube, onde estão registradas: https://www.youtube.com/@forroderaizrn3447 . No total, houve a participação de uma média de 15 forrozeiros.'}
+2025-02-06 10:29:47,403 - INFO - Sending request to API
+2025-02-06 10:29:47,403 - DEBUG - Sent payload: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Quais foram os principais objetivos das reuniões on-line com os forrozeiros da Bahia para a construção do Plano de Salvaguarda das Matrizes Tradicionais do Forró?"
+    },
+    {
+      "role": "system",
+      "content": "Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Coleção: Ações Título: Plano de Salvaguarda das Matrizes Tradicionais do Forró na Bahia Descrição: A presente ação de salvaguarda é resultado do processo realizado junto aos detentores das Matrizes Tradicionais do Forró no Estado da Bahia para a elaboração das ações de salvaguarda que integrarão o Plano de Salvaguarda nacional desse Bem Cultural, registrado no ano de 2021. Diante da impossibilidade de realizarmos reuniões no interior do estado e em conversa com os detentores que já estavam mobilizados desde o contexto de registro do bem, optamos por realizar reuniões virtuais para discutir e consolidar as ações de salvaguarda das Matrizes Tradicionais do Forró no contexto baiano.\nColeção: Ações Título: Elaboração do Plano de Salvaguarda - Ceará Descrição: Buscando atender a solicitação de coleta de dados regionais para a composição do Plano de Salvaguarda das Matrizes Tradicionais do Forró (MTF), realizamos seis reuniões com pessoas no estado com alguma ligação com essa manifestação cultural, como músicos, dançarinos e dirigentes de grupos. As reuniões ocorreram todas de forma online pela plataforma MEET. Em anexo,  temos a lista dos presentes nas reuniões.\nColeção: Ações Título: Plano de Salvaguarda das Matrizes do Forró Descrição: Tendo em vista o processo de elaboração do Plano de Salvaguarda das Matrizes do Forró, ocorreram quatro reuniões com Forrozeiros do estado do Rio Grande do Norte, entre os meses de setembro a  novembro de 2022, com o propósito de definir objetivos e ações planejadas pelos detentores. O Fórum do Forró de Raiz, na figura de Jarbas do Acordeon, esteve a frente da mobilização dos dos forrozeiros para participação nas reuniões, que aconteceram de modo virtual e foram transmitidas ao vivo através do canal do Forró de Raiz RN no Youtube, onde estão registradas: https://www.youtube.com/@forroderaizrn3447 . No total, houve a participação de uma média de 15 forrozeiros."
+    }
+  ]
+}
+2025-02-06 10:29:47,404 - DEBUG - Starting new HTTPS connection (1): api-nice.ibict.br:443
+2025-02-06 10:29:50,125 - DEBUG - https://api-nice.ibict.br:443 "POST /ibictLLM HTTP/11" 200 None
+2025-02-06 10:29:50,125 - DEBUG - Received response from API with status code: 200
+2025-02-06 10:29:50,125 - DEBUG - Response content: {"done_reason":"stop","total_duration":2585728918,"load_duration":17713304,"model":"base:8b","prompt_eval_count":629,"eval_count":269,"done":true,"license":"IBICT/CGTI","eval_duration":2424000000,"message":{"content":"Quais foram os principais objetivos das reuniões on-line com os forrozeiros da Bahia para a construção do Plano de Salvaguarda das Matrizes Tradicionais do Forró?\n\nOs principais objetivos das reuniões online com os forrozeiros da Bahia para a construção do Plano de Salvaguarda da
+2025-02-06 10:29:50,125 - INFO - Added message to payload - {'role': 'chatbot', 'content': 'Quais foram os principais objetivos das reuniões on-line com os forrozeiros da Bahia para a construção do Plano de Salvaguarda das Matrizes Tradicionais do Forró?\n\nOs principais objetivos das reuniões online com os forrozeiros da Bahia para a construção do Plano de Salvaguarda das Matrizes Tradicionais do Forró foram:\n\n1. Consolidar a mobilização dos detentores das matrizes tradicionais do forró no Estado da Bahia;\n2. Definir objetivos e ações planejadas pelos detentores para a salvaguarda dessas matrizes;\n3. Coletar informações regionais sobre as matrizes tradicionais do forró na Bahia;\n4. Consolidar a participação dos forrozeiros na construção do Plano de Salvaguarda nacional das Matrizes Tradicionais do Forró, registrado no ano de 2021.\n\nEssas reuniões virtuais permitiram a discussão e consolidação de ações para a salvaguarda das matrizes tradicionais do forró na Bahia, contribuindo para a construção do Plano de Salvaguarda nacional.'}
+2025-02-06 10:29:50,126 - INFO - ==================================== end question ====================================
+2025-02-06 10:29:55,127 - INFO - Added message to payload - {'role': 'user', 'content': 'Como se deu o processo de mobilização e discussão para a elaboração do Plano Nacional de Salvaguarda da Literatura de Cordel na Bahia?'}
+2025-02-06 10:29:55,128 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-02-06 10:29:57,208 - DEBUG - http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2025-02-06 10:29:57,210 - DEBUG - Time per query in nanoseconds: 70200
+2025-02-06 10:29:57,210 - DEBUG - Retrieved documents with distances: [
+  {
+    "document": "Coleção: Ações Título: Elaboração das estratégias locais de atuação para a salvaguarda da Literatura de Cordel na Paraíba e de subsídios para o Plano Nacional de Salvaguarda da Literatura de Cordel Descrição: Realização de reuniões de mobilização dos cordelistas e xilogravadores atuantes no Estado da Paraíba para a elaboração do documento \"Estratégias locais de atuação para a Salvaguarda da Literatura de Cordel na Paraíba\" e para a elaboração de subsídios para o \"Plano Nacional de Salvaguarda da Literatura de Cordel\".",
+    "distance": 270.84197998046875
+  },
+  {
+    "document": "Coleção: Ações Título: Reuniões para elaboração do Plano de Salvaguarda da Literatura de Cordel Descrição: Cientes de que em 2023 inicia a produção do Plano Nacional de Salvaguarda da Literatura de Cordel, e a partir de demanda dos detentores, iniciamos a realização de reuniões para mobilização, discussão e elaboração do plano de salvaguarda da literatura de cordel na Bahia. Todas as informações sobre as reuniões constam no processo 01502.001542/2022-25. Até o momento foram realizadas três reuniões virtuais e produzido um quadro diagnóstico (ainda em elaboração) sobre a situação do cordel na Bahia. Estados: Bahia,Unidade do IPHAN: IPHAN-BA,Processo institucional: Articulação,Processo institucional: Formação, Articulação, Apoio e",
+    "distance": 265.48663330078125
+  },
+  {
+    "document": "Coleção: Ações Título: Plano de Salvaguarda das Matrizes Tradicionais do Forró na Bahia Descrição: A presente ação de salvaguarda é resultado do processo realizado junto aos detentores das Matrizes Tradicionais do Forró no Estado da Bahia para a elaboração das ações de salvaguarda que integrarão o Plano de Salvaguarda nacional desse Bem Cultural, registrado no ano de 2021. Diante da impossibilidade de realizarmos reuniões no interior do estado e em conversa com os detentores que já estavam mobilizados desde o contexto de registro do bem, optamos por realizar reuniões virtuais para discutir e consolidar as ações de salvaguarda das Matrizes Tradicionais do Forró no contexto baiano.",
+    "distance": 256.28485107421875
+  }
+]
+2025-02-06 10:29:57,210 - INFO - Added message to payload - {'role': 'system', 'content': 'Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Coleção: Ações Título: Elaboração das estratégias locais de atuação para a salvaguarda da Literatura de Cordel na Paraíba e de subsídios para o Plano Nacional de Salvaguarda da Literatura de Cordel Descrição: Realização de reuniões de mobilização dos cordelistas e xilogravadores atuantes no Estado da Paraíba para a elaboração do documento "Estratégias locais de atuação para a Salvaguarda da Literatura de Cordel na Paraíba" e para a elaboração de subsídios para o "Plano Nacional de Salvaguarda da Literatura de Cordel".\nColeção: Ações Título: Reuniões para elaboração do Plano de Salvaguarda da Literatura de Cordel Descrição: Cientes de que em 2023 inicia a produção do Plano Nacional de Salvaguarda da Literatura de Cordel, e a partir de demanda dos detentores, iniciamos a realização de reuniões para mobilização, discussão e elaboração do plano de salvaguarda da literatura de cordel na Bahia. Todas as informações sobre as reuniões constam no processo 01502.001542/2022-25. Até o momento foram realizadas três reuniões virtuais e produzido um quadro diagnóstico (ainda em elaboração) sobre a situação do cordel na Bahia. Estados: Bahia,Unidade do IPHAN: IPHAN-BA,Processo institucional: Articulação,Processo institucional: Formação, Articulação, Apoio e\nColeção: Ações Título: Plano de Salvaguarda das Matrizes Tradicionais do Forró na Bahia Descrição: A presente ação de salvaguarda é resultado do processo realizado junto aos detentores das Matrizes Tradicionais do Forró no Estado da Bahia para a elaboração das ações de salvaguarda que integrarão o Plano de Salvaguarda nacional desse Bem Cultural, registrado no ano de 2021. Diante da impossibilidade de realizarmos reuniões no interior do estado e em conversa com os detentores que já estavam mobilizados desde o contexto de registro do bem, optamos por realizar reuniões virtuais para discutir e consolidar as ações de salvaguarda das Matrizes Tradicionais do Forró no contexto baiano.'}
+2025-02-06 10:29:57,210 - INFO - Sending request to API
+2025-02-06 10:29:57,210 - DEBUG - Sent payload: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Como se deu o processo de mobilização e discussão para a elaboração do Plano Nacional de Salvaguarda da Literatura de Cordel na Bahia?"
+    },
+    {
+      "role": "system",
+      "content": "Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Coleção: Ações Título: Elaboração das estratégias locais de atuação para a salvaguarda da Literatura de Cordel na Paraíba e de subsídios para o Plano Nacional de Salvaguarda da Literatura de Cordel Descrição: Realização de reuniões de mobilização dos cordelistas e xilogravadores atuantes no Estado da Paraíba para a elaboração do documento \"Estratégias locais de atuação para a Salvaguarda da Literatura de Cordel na Paraíba\" e para a elaboração de subsídios para o \"Plano Nacional de Salvaguarda da Literatura de Cordel\".\nColeção: Ações Título: Reuniões para elaboração do Plano de Salvaguarda da Literatura de Cordel Descrição: Cientes de que em 2023 inicia a produção do Plano Nacional de Salvaguarda da Literatura de Cordel, e a partir de demanda dos detentores, iniciamos a realização de reuniões para mobilização, discussão e elaboração do plano de salvaguarda da literatura de cordel na Bahia. Todas as informações sobre as reuniões constam no processo 01502.001542/2022-25. Até o momento foram realizadas três reuniões virtuais e produzido um quadro diagnóstico (ainda em elaboração) sobre a situação do cordel na Bahia. Estados: Bahia,Unidade do IPHAN: IPHAN-BA,Processo institucional: Articulação,Processo institucional: Formação, Articulação, Apoio e\nColeção: Ações Título: Plano de Salvaguarda das Matrizes Tradicionais do Forró na Bahia Descrição: A presente ação de salvaguarda é resultado do processo realizado junto aos detentores das Matrizes Tradicionais do Forró no Estado da Bahia para a elaboração das ações de salvaguarda que integrarão o Plano de Salvaguarda nacional desse Bem Cultural, registrado no ano de 2021. Diante da impossibilidade de realizarmos reuniões no interior do estado e em conversa com os detentores que já estavam mobilizados desde o contexto de registro do bem, optamos por realizar reuniões virtuais para discutir e consolidar as ações de salvaguarda das Matrizes Tradicionais do Forró no contexto baiano."
+    }
+  ]
+}
+2025-02-06 10:29:57,211 - DEBUG - Starting new HTTPS connection (1): api-nice.ibict.br:443
+2025-02-06 10:30:02,042 - DEBUG - https://api-nice.ibict.br:443 "POST /ibictLLM HTTP/11" 200 None
+2025-02-06 10:30:02,042 - DEBUG - Received response from API with status code: 200
+2025-02-06 10:30:02,043 - DEBUG - Response content: {"done_reason":"stop","total_duration":4651190889,"load_duration":17821928,"model":"base:8b","prompt_eval_count":633,"eval_count":499,"done":true,"license":"IBICT/CGTI","eval_duration":4506000000,"message":{"content":"Como se deu o processo de mobilização e discussão para a elaboração do Plano Nacional de Salvaguarda da Literatura de Cordel na Bahia?\n\nA mobilização e discussão para a elaboração do Plano Nacional de Salvaguarda da Literatura de Cordel na Bahia ocorreram mediante uma série de re
+2025-02-06 10:30:02,043 - INFO - Added message to payload - {'role': 'chatbot', 'content': 'Como se deu o processo de mobilização e discussão para a elaboração do Plano Nacional de Salvaguarda da Literatura de Cordel na Bahia?\n\nA mobilização e discussão para a elaboração do Plano Nacional de Salvaguarda da Literatura de Cordel na Bahia ocorreram mediante uma série de reuniões virtuais realizadas desde 2022, visando a envolver os cordelistas e xilogravadores atuantes no Estado da Bahia.\n\nEm primeiro lugar, foi necessário mobilizar os principais detentores da literatura de cordel na Bahia, objetivando estabelecer um diálogo eficaz sobre as necessidades e desafios para a salvaguarda dessa manifestação cultural. As reuniões virtuais permitiram que esses atores se reunissem, compartilhassem suas experiências e perspectivas, e contribuíssem para a construção do quadro diagnóstico da situação da literatura de cordel na Bahia.\n\nAinda em 2022, foram realizadas três reuniões virtuais, nas quais os participantes discutiram temas como a história da literatura de cordel, as técnicas de produção e reprodução dos livros de cordel, a situação atual dos detentores da cultura de cordel na Bahia e as estratégias para a salvaguarda desse patrimônio cultural.\n\nEm seguida, foi elaborado um quadro diagnóstico que sintetizou as informações coletadas durante as reuniões virtuais. Esse documento permitiu identificar os principais desafios e oportunidades para a salvaguarda da literatura de cordel na Bahia, bem como estabelecer prioridades para o Plano Nacional de Salvaguarda.\n\nA mobilização e discussão para a elaboração do Plano Nacional de Salvaguarda da Literatura de Cordel na Bahia foi essencial para garantir que as necessidades e perspectivas dos cordelistas e xilogravadores atuantes no Estado da Bahia fossem consideradas e incorporadas ao plano. Essa abordagem colaborativa permitiu construir um documento que seja eficazmente implementado e que atenda às necessidades reais da cultura de cordel na Bahia.'}
+2025-02-06 10:30:02,043 - INFO - ==================================== end question ====================================
+2025-02-06 10:30:07,044 - INFO - Added message to payload - {'role': 'user', 'content': 'Quais diretrizes foram discutidas nas reuniões com o Coletivo Carmo para a promoção e salvaguarda dos Mestres de Capoeira Angola?'}
+2025-02-06 10:30:07,045 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-02-06 10:30:09,122 - DEBUG - http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2025-02-06 10:30:09,125 - DEBUG - Time per query in nanoseconds: 63800
+2025-02-06 10:30:09,125 - DEBUG - Retrieved documents with distances: [
+  {
+    "document": "Coleção: Ações Título: Reuniões sobre diretrizes da Salvaguarda para Mestres de Capoeira Angola do Coletivo Carmo Descrição: Realização de reuniões junto ao Coletivo Carmo, organização da sociedade civil integrada por Mestres de Capoeira Angola, a respeito das diretrizes da Salvaguarda e as possibilidades de fomento e promoção de projeto voltado aos antigos Mestres. A proposta a ser elaborada pelo coletivo e apresentada ao IPHAN para atuarmos como parceiros visa produzir uma exposição sobre a Capoeira Angola e seus mestres, com a confecção de bustos daqueles que formaram as atuais linhagens presentes na Bahia. Estados: Bahia,Processo institucional: Formação, Articulação, Apoio e sustentabilidade,Processo institucional: Formação e assessoria",
+    "distance": 244.46340942382812
+  },
+  {
+    "document": "Além da participação de capoeiristas que integram o COMCAP-RN, participou também capoeiristas de diversos grupos no estado. Apenas a última reunião contou com a presença dos parceiros para apresentação da minuta do Plano de Salvaguarda e pactuação para execução do Plano.",
+    "distance": 233.95970153808594
+  },
+  {
+    "document": "Coleção: Ações Título: Organização do Plano de Salvaguarda da Capoeira em Rondônia, e do 1º Encontro do GT de Salvaguarda da Capoeira em Rondônia Descrição: A construção do Plano de Salvaguarda da Capoeira em Rondônia foi realizada a partir das reuniões e entrevistas, presenciais e virtuais, feitas com os detentores desse bem cultural ao longo dos dois últimos anos. O objetivo em questão foi o levantamento de demandas e planos de ação apresentadas por mestres e capoeiristas, a serem implementadas nos diferentes municípios rondonienses para a salvaguarda, a difusão e a valorização da capoeira.",
+    "distance": 233.78152465820312
+  }
+]
+2025-02-06 10:30:09,126 - INFO - Added message to payload - {'role': 'system', 'content': 'Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Coleção: Ações Título: Reuniões sobre diretrizes da Salvaguarda para Mestres de Capoeira Angola do Coletivo Carmo Descrição: Realização de reuniões junto ao Coletivo Carmo, organização da sociedade civil integrada por Mestres de Capoeira Angola, a respeito das diretrizes da Salvaguarda e as possibilidades de fomento e promoção de projeto voltado aos antigos Mestres. A proposta a ser elaborada pelo coletivo e apresentada ao IPHAN para atuarmos como parceiros visa produzir uma exposição sobre a Capoeira Angola e seus mestres, com a confecção de bustos daqueles que formaram as atuais linhagens presentes na Bahia. Estados: Bahia,Processo institucional: Formação, Articulação, Apoio e sustentabilidade,Processo institucional: Formação e assessoria\nAlém da participação de capoeiristas que integram o COMCAP-RN, participou também capoeiristas de diversos grupos no estado. Apenas a última reunião contou com a presença dos parceiros para apresentação da minuta do Plano de Salvaguarda e pactuação para execução do Plano.\nColeção: Ações Título: Organização do Plano de Salvaguarda da Capoeira em Rondônia, e do 1º Encontro do GT de Salvaguarda da Capoeira em Rondônia Descrição: A construção do Plano de Salvaguarda da Capoeira em Rondônia foi realizada a partir das reuniões e entrevistas, presenciais e virtuais, feitas com os detentores desse bem cultural ao longo dos dois últimos anos. O objetivo em questão foi o levantamento de demandas e planos de ação apresentadas por mestres e capoeiristas, a serem implementadas nos diferentes municípios rondonienses para a salvaguarda, a difusão e a valorização da capoeira.'}
+2025-02-06 10:30:09,126 - INFO - Sending request to API
+2025-02-06 10:30:09,126 - DEBUG - Sent payload: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Quais diretrizes foram discutidas nas reuniões com o Coletivo Carmo para a promoção e salvaguarda dos Mestres de Capoeira Angola?"
+    },
+    {
+      "role": "system",
+      "content": "Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Coleção: Ações Título: Reuniões sobre diretrizes da Salvaguarda para Mestres de Capoeira Angola do Coletivo Carmo Descrição: Realização de reuniões junto ao Coletivo Carmo, organização da sociedade civil integrada por Mestres de Capoeira Angola, a respeito das diretrizes da Salvaguarda e as possibilidades de fomento e promoção de projeto voltado aos antigos Mestres. A proposta a ser elaborada pelo coletivo e apresentada ao IPHAN para atuarmos como parceiros visa produzir uma exposição sobre a Capoeira Angola e seus mestres, com a confecção de bustos daqueles que formaram as atuais linhagens presentes na Bahia. Estados: Bahia,Processo institucional: Formação, Articulação, Apoio e sustentabilidade,Processo institucional: Formação e assessoria\nAlém da participação de capoeiristas que integram o COMCAP-RN, participou também capoeiristas de diversos grupos no estado. Apenas a última reunião contou com a presença dos parceiros para apresentação da minuta do Plano de Salvaguarda e pactuação para execução do Plano.\nColeção: Ações Título: Organização do Plano de Salvaguarda da Capoeira em Rondônia, e do 1º Encontro do GT de Salvaguarda da Capoeira em Rondônia Descrição: A construção do Plano de Salvaguarda da Capoeira em Rondônia foi realizada a partir das reuniões e entrevistas, presenciais e virtuais, feitas com os detentores desse bem cultural ao longo dos dois últimos anos. O objetivo em questão foi o levantamento de demandas e planos de ação apresentadas por mestres e capoeiristas, a serem implementadas nos diferentes municípios rondonienses para a salvaguarda, a difusão e a valorização da capoeira."
+    }
+  ]
+}
+2025-02-06 10:30:09,127 - DEBUG - Starting new HTTPS connection (1): api-nice.ibict.br:443
+2025-02-06 10:30:14,065 - DEBUG - https://api-nice.ibict.br:443 "POST /ibictLLM HTTP/11" 200 None
+2025-02-06 10:30:14,065 - DEBUG - Received response from API with status code: 200
+2025-02-06 10:30:14,065 - DEBUG - Response content: {"eval_count":514,"model":"base:8b","prompt_eval_count":553,"done_reason":"stop","total_duration":4762572314,"load_duration":15458364,"done":true,"eval_duration":4627000000,"license":"IBICT/CGTI","message":{"content":"Quais diretrizes foram discutidas nas reuniões com o Coletivo Carmo para a promoção e salvaguarda dos Mestres de Capoeira Angola?\n\nDurante as reuniões com o Coletivo Carmo, as seguintes diretrizes foram discutidas e estabelecidas para a promoção e salvaguarda dos Mestres de Capoe
+2025-02-06 10:30:14,065 - INFO - Added message to payload - {'role': 'chatbot', 'content': 'Quais diretrizes foram discutidas nas reuniões com o Coletivo Carmo para a promoção e salvaguarda dos Mestres de Capoeira Angola?\n\nDurante as reuniões com o Coletivo Carmo, as seguintes diretrizes foram discutidas e estabelecidas para a promoção e salvaguarda dos Mestres de Capoeira Angola:\n\n1. **Documentação**: Fomentar a documentação das histórias, técnicas e valores dos Mestres de Capoeira Angola, mediante registros audiovisuais, entrevistas e relatos escritos;\n2. **Preservação da memória**: Preservar a memória e a identidade cultural dos Mestres de Capoeira Angola, mediante a criação de um arquivo histórico e a realização de eventos culturais e educacionais;\n3. **Formação e capacitação**: Oferecer oportunidades de formação e capacitação para os Mestres de Capoeira Angola, visando à melhoria da qualidade técnica e pedagógica das suas aulas;\n4. **Apoio financeiro e material**: Fornecer apoio financeiro e material para os Mestres de Capoeira Angola, visando à realização de projetos e eventos que contribuam para a difusão e valorização da Capoeira Angola;\n5. **Valorização da diversidade cultural**: Valorizar a diversidade cultural presente na Capoeira Angola, respeitando as diferenças entre as diversas linhagens e estilos de capoeira;\n6. **Parcerias e cooperação**: Estabelecer parcerias e cooperar com instituições públicas e privadas para a promoção e salvaguarda dos Mestres de Capoeira Angola, visando à sua integração na sociedade e à valorização da cultura capoeirista;\n7. **Educação e conscientização**: Promover a educação e conscientização sobre a importância da preservação da cultura capoeirista e dos Mestres de Capoeira Angola, dentro da sociedade brasileira.\n\nEssas diretrizes foram estabelecidas para garantir a promoção e salvaguarda dos Mestres de Capoeira Angola, respeitando sua identidade cultural e contribuição para a preservação da cultura capoeirista.'}
+2025-02-06 10:30:14,065 - INFO - ==================================== end question ====================================
+2025-02-06 10:30:19,066 - INFO - Added message to payload - {'role': 'user', 'content': 'Quais foram os principais pontos abordados na roda de conversa sobre previdência voltada para os capoeiristas?'}
+2025-02-06 10:30:19,067 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-02-06 10:30:21,138 - DEBUG - http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2025-02-06 10:30:21,140 - DEBUG - Time per query in nanoseconds: 58700
+2025-02-06 10:30:21,140 - DEBUG - Retrieved documents with distances: [
+  {
+    "document": "Capoeira. Também foi tratada a cessão do espaço para gestão por parte das entidades representativas dos grupos de capoeira do Acre. A reunião ocorreu na sede da SEINFRA. Participaram da reunião representantes da Liga Acreana de Capoeira, da Fundação Acreana de Capoeira, do Comitê Gestor da Salvaguarda da Capoeira, além da técnica do Iphan e dos gestores e técnicos da SEINFRA. As discussões sobre a Praça da Capoeira também foram intensas no grupo da Salvaguarda da Capoeira acreana no WhatsApp. Como resultado, foi apresentado um projeto para a construção do espaço anexo à Praça da Capoeira.",
+    "distance": 270.0514831542969
+  },
+  {
+    "document": "As falas do capoeiristas presentes versaram sobre a importância da Previcap para aqueles que integram ao programa, sobre a recorrência da demanda de benefícios previdenciários em outros bens imateriais, sobre a dinâmica da relação entre a previdência pública e privada, bem como sobre as possibilidades que se apresentam para encaminhamento da questão.",
+    "distance": 267.59588623046875
+  },
+  {
+    "document": "Além da participação de capoeiristas que integram o COMCAP-RN, participou também capoeiristas de diversos grupos no estado. Apenas a última reunião contou com a presença dos parceiros para apresentação da minuta do Plano de Salvaguarda e pactuação para execução do Plano.",
+    "distance": 265.1034240722656
+  }
+]
+2025-02-06 10:30:21,140 - INFO - Added message to payload - {'role': 'system', 'content': 'Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Capoeira. Também foi tratada a cessão do espaço para gestão por parte das entidades representativas dos grupos de capoeira do Acre. A reunião ocorreu na sede da SEINFRA. Participaram da reunião representantes da Liga Acreana de Capoeira, da Fundação Acreana de Capoeira, do Comitê Gestor da Salvaguarda da Capoeira, além da técnica do Iphan e dos gestores e técnicos da SEINFRA. As discussões sobre a Praça da Capoeira também foram intensas no grupo da Salvaguarda da Capoeira acreana no WhatsApp. Como resultado, foi apresentado um projeto para a construção do espaço anexo à Praça da Capoeira.\nAs falas do capoeiristas presentes versaram sobre a importância da Previcap para aqueles que integram ao programa, sobre a recorrência da demanda de benefícios previdenciários em outros bens imateriais, sobre a dinâmica da relação entre a previdência pública e privada, bem como sobre as possibilidades que se apresentam para encaminhamento da questão.\nAlém da participação de capoeiristas que integram o COMCAP-RN, participou também capoeiristas de diversos grupos no estado. Apenas a última reunião contou com a presença dos parceiros para apresentação da minuta do Plano de Salvaguarda e pactuação para execução do Plano.'}
+2025-02-06 10:30:21,140 - INFO - Sending request to API
+2025-02-06 10:30:21,140 - DEBUG - Sent payload: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Quais foram os principais pontos abordados na roda de conversa sobre previdência voltada para os capoeiristas?"
+    },
+    {
+      "role": "system",
+      "content": "Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Capoeira. Também foi tratada a cessão do espaço para gestão por parte das entidades representativas dos grupos de capoeira do Acre. A reunião ocorreu na sede da SEINFRA. Participaram da reunião representantes da Liga Acreana de Capoeira, da Fundação Acreana de Capoeira, do Comitê Gestor da Salvaguarda da Capoeira, além da técnica do Iphan e dos gestores e técnicos da SEINFRA. As discussões sobre a Praça da Capoeira também foram intensas no grupo da Salvaguarda da Capoeira acreana no WhatsApp. Como resultado, foi apresentado um projeto para a construção do espaço anexo à Praça da Capoeira.\nAs falas do capoeiristas presentes versaram sobre a importância da Previcap para aqueles que integram ao programa, sobre a recorrência da demanda de benefícios previdenciários em outros bens imateriais, sobre a dinâmica da relação entre a previdência pública e privada, bem como sobre as possibilidades que se apresentam para encaminhamento da questão.\nAlém da participação de capoeiristas que integram o COMCAP-RN, participou também capoeiristas de diversos grupos no estado. Apenas a última reunião contou com a presença dos parceiros para apresentação da minuta do Plano de Salvaguarda e pactuação para execução do Plano."
+    }
+  ]
+}
+2025-02-06 10:30:21,141 - DEBUG - Starting new HTTPS connection (1): api-nice.ibict.br:443
+2025-02-06 10:30:22,157 - DEBUG - https://api-nice.ibict.br:443 "POST /ibictLLM HTTP/11" 200 None
+2025-02-06 10:30:22,157 - DEBUG - Received response from API with status code: 200
+2025-02-06 10:30:22,158 - DEBUG - Response content: {"done_reason":"stop","total_duration":363352175,"load_duration":17704357,"model":"base:8b","prompt_eval_count":405,"eval_count":30,"done":true,"license":"IBICT/CGTI","eval_duration":316000000,"message":{"content":"Quais foram os principais pontos abordados na roda de conversa sobre previdência voltada para os capoeiristas?","role":"assistant"},"prompt_eval_duration":26000000,"created_at":"2025-02-06T13:30:22.128277034Z"}
+2025-02-06 10:30:22,158 - INFO - Added message to payload - {'role': 'chatbot', 'content': 'Quais foram os principais pontos abordados na roda de conversa sobre previdência voltada para os capoeiristas?'}
+2025-02-06 10:30:22,158 - INFO - ==================================== end question ====================================
+2025-02-06 10:30:27,158 - INFO - Added message to payload - {'role': 'user', 'content': 'Quais ações foram realizadas para a salvaguarda da Tava Guarani em colaboração com o Centro de Referência Indígena-Afro no Rio Grande do Sul?'}
+2025-02-06 10:30:27,159 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-02-06 10:30:29,231 - DEBUG - http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2025-02-06 10:30:29,233 - DEBUG - Time per query in nanoseconds: 58000
+2025-02-06 10:30:29,233 - DEBUG - Retrieved documents with distances: [
+  {
+    "document": "Coleção: Ações Título: Salvaguarda da Tava junto ao Centro de Referência Indígena-Afro do Rio Grande do Sul (CRIA-RS) Descrição: Trata-se de continuidade de Ação de Salvaguarda da Tava Guarani, que teve início no final do ano de 2021 à convite da Cacica Alice Guarani, liderança da comunidade indígena urbana multiétinica de Porto Alegre.",
+    "distance": 260.58135986328125
+  },
+  {
+    "document": "Essa iniciativa pode ser considerada pioneira na capital do estado do RS, promovendo o apoio às práticas de artesanato tradicional Guarani e contribuindo para a produção e reprodução cultural dos detentores da Tava Guarani Estados: Rio Grande do Sul,Unidade do IPHAN: IPHAN-RS,Processo institucional: Apoio e sustentabilidade,Processo institucional: Educação Patrimonial,Processo institucional: Identificação Data de postagem: 2024-03-18 15:58:47",
+    "distance": 243.2215118408203
+  },
+  {
+    "document": "Ao longo do ano de 2022 visitamos o Centro de Referência Indígena-Afro do Rio Grande do Sul (CRIA-RS), situado nesta capital, e demos continuidade à apresentação dos princípios do Programa Nacional de Patrimônio Imaterial (PNPI) e os projetos efetuados pelo IPHAN relativos ao patrimônio cultural indígena. Em especial, o INRC do Mundo Cultural Guarani e o Registro da Tava - Lugar de Referência para o Povo Guarani como Patrimônio Cultural Imaterial do Brasil.",
+    "distance": 241.73793029785156
+  }
+]
+2025-02-06 10:30:29,233 - INFO - Added message to payload - {'role': 'system', 'content': 'Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Coleção: Ações Título: Salvaguarda da Tava junto ao Centro de Referência Indígena-Afro do Rio Grande do Sul (CRIA-RS) Descrição: Trata-se de continuidade de Ação de Salvaguarda da Tava Guarani, que teve início no final do ano de 2021 à convite da Cacica Alice Guarani, liderança da comunidade indígena urbana multiétinica de Porto Alegre.\nEssa iniciativa pode ser considerada pioneira na capital do estado do RS, promovendo o apoio às práticas de artesanato tradicional Guarani e contribuindo para a produção e reprodução cultural dos detentores da Tava Guarani Estados: Rio Grande do Sul,Unidade do IPHAN: IPHAN-RS,Processo institucional: Apoio e sustentabilidade,Processo institucional: Educação Patrimonial,Processo institucional: Identificação Data de postagem: 2024-03-18 15:58:47\nAo longo do ano de 2022 visitamos o Centro de Referência Indígena-Afro do Rio Grande do Sul (CRIA-RS), situado nesta capital, e demos continuidade à apresentação dos princípios do Programa Nacional de Patrimônio Imaterial (PNPI) e os projetos efetuados pelo IPHAN relativos ao patrimônio cultural indígena. Em especial, o INRC do Mundo Cultural Guarani e o Registro da Tava - Lugar de Referência para o Povo Guarani como Patrimônio Cultural Imaterial do Brasil.'}
+2025-02-06 10:30:29,233 - INFO - Sending request to API
+2025-02-06 10:30:29,233 - DEBUG - Sent payload: {
+  "model": "base:8b",
+  "stream": false,
+  "keep_alive": "60m",
+  "options": {
+    "seed": 105,
+    "temperature": 0.7,
+    "num_ctx": 8192
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Quais ações foram realizadas para a salvaguarda da Tava Guarani em colaboração com o Centro de Referência Indígena-Afro no Rio Grande do Sul?"
+    },
+    {
+      "role": "system",
+      "content": "Com base nas informações disponíveis, utilize uma linguagem simpática para fornecer uma resposta informativa. Aqui está o contexto: Coleção: Ações Título: Salvaguarda da Tava junto ao Centro de Referência Indígena-Afro do Rio Grande do Sul (CRIA-RS) Descrição: Trata-se de continuidade de Ação de Salvaguarda da Tava Guarani, que teve início no final do ano de 2021 à convite da Cacica Alice Guarani, liderança da comunidade indígena urbana multiétinica de Porto Alegre.\nEssa iniciativa pode ser considerada pioneira na capital do estado do RS, promovendo o apoio às práticas de artesanato tradicional Guarani e contribuindo para a produção e reprodução cultural dos detentores da Tava Guarani Estados: Rio Grande do Sul,Unidade do IPHAN: IPHAN-RS,Processo institucional: Apoio e sustentabilidade,Processo institucional: Educação Patrimonial,Processo institucional: Identificação Data de postagem: 2024-03-18 15:58:47\nAo longo do ano de 2022 visitamos o Centro de Referência Indígena-Afro do Rio Grande do Sul (CRIA-RS), situado nesta capital, e demos continuidade à apresentação dos princípios do Programa Nacional de Patrimônio Imaterial (PNPI) e os projetos efetuados pelo IPHAN relativos ao patrimônio cultural indígena. Em especial, o INRC do Mundo Cultural Guarani e o Registro da Tava - Lugar de Referência para o Povo Guarani como Patrimônio Cultural Imaterial do Brasil."
+    }
+  ]
+}
+2025-02-06 10:30:29,234 - DEBUG - Starting new HTTPS connection (1): api-nice.ibict.br:443
+2025-02-06 10:30:32,458 - DEBUG - https://api-nice.ibict.br:443 "POST /ibictLLM HTTP/11" 200 None
+2025-02-06 10:30:32,459 - DEBUG - Received response from API with status code: 200
+2025-02-06 10:30:32,459 - DEBUG - Response content: {"done_reason":"stop","model":"base:8b","prompt_eval_count":454,"eval_count":230,"created_at":"2025-02-06T13:30:32.598547527Z","prompt_eval_duration":28000000,"done":true,"total_duration":2145112735,"load_duration":17737299,"message":{"content":"Quais ações foram realizadas para a salvaguarda da Tava Guarani em colaboração com o Centro de Referência Indígena-Afro no Rio Grande do Sul?\n\nEm 2022, foi dado continuidade à apresentação dos princípios do Programa Nacional de Patrimônio Imaterial (PN
+2025-02-06 10:30:32,459 - INFO - Added message to payload - {'role': 'chatbot', 'content': 'Quais ações foram realizadas para a salvaguarda da Tava Guarani em colaboração com o Centro de Referência Indígena-Afro no Rio Grande do Sul?\n\nEm 2022, foi dado continuidade à apresentação dos princípios do Programa Nacional de Patrimônio Imaterial (PNPI) e os projetos efetuados pelo IPHAN relativos ao patrimônio cultural indígena, especificamente o Registro da Tava - Lugar de Referência para o Povo Guarani como Patrimônio Cultural Imaterial do Brasil. Além disso, foi realizado apoio e sustentabilidade às práticas de artesanato tradicional Guarani e contribuição para a produção e reprodução cultural dos detentores da Tava Guarani.\n\nEssa colaboração entre o CRIA-RS e o IPHAN-RS visa promover o apoio às comunidades indígenas e afrodescendentes, além de contribuir para a salvaguarda do patrimônio cultural imaterial brasileiro.'}
+2025-02-06 10:30:32,459 - INFO - ==================================== end question ====================================
