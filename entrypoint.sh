@@ -11,5 +11,6 @@ sleep 5
 
 echo "Pulling models"
 ollama pull nomic-embed-text
+ollama pull llama3.1:8b
 
 wait
