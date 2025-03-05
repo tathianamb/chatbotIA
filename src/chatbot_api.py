@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from vendor.rag_model import IBICTChatbot
+from vendor.rag_model import chatbot
 import logging
 import os
 
@@ -40,11 +40,3 @@ async def ask_chatbot(chat_request: ChatRequest):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
-
-"""
-curl -X POST http://localhost:8000/chatbot-iphan-obs/ \
-     -H "Content-Type: application/json" \
-     -d '{"question": "Qual é a capital do Brasil?"}'
-     
-http://localhost:8000/docs#/
-"""
