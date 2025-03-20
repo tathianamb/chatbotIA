@@ -4,7 +4,7 @@ import faiss
 import numpy as np
 from langchain_ollama import OllamaEmbeddings
 import time
-from vendor.MySQLLoader import MySQLLoader
+from vendor.mysqlloader import MySQLLoader
 import logging
 import json
 import os
