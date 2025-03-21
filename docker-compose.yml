@@ -2,17 +2,17 @@ services:
   ollama:
     image: ollama/ollama:latest
     container_name: ollama-server
-    expose:
-      - 11434/tcp
+    ports:
+      - "11434:11434"
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:11434" ]
+      test: [ "CMD", "curl", "-f", "http://127.0.0.1:11434" ]
       interval: 60s
       timeout: 30s
       retries: 10
     volumes:
       - ./ollama/ollama:/root/.ollama
       - ./entrypoint.sh:/entrypoint.sh
-    entrypoint: ["/bin/bash", "/entrypoint.sh" ]
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
     networks:
       - ollama-network
 
