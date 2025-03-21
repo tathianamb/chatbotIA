@@ -11,10 +11,11 @@ from vendor.query_rewrite import AgentQR
 
 class Chatbot(BaseAgent):
 
-    def __init__(self, api_ollama, model_llm, model_embeddings, temperature, seed):
+    def __init__(self, api_ollama, model_llm, model_embeddings, model_qr, temperature, seed):
         super().__init__(api_ollama, model_llm, temperature, seed)
         self.payload["messages"] = []
         self.model_embeddings = model_embeddings
+        self.model_qr = model_qr
         logging.info(f'Initial configuration: {model_llm}, {model_embeddings}.')
 
     def _set_messages(self, role, content):
@@ -68,7 +69,7 @@ class Chatbot(BaseAgent):
     def get_response_RAGChatbot(self, user_message, vector_store_path, k):
 
         if len(self.payload["messages"]) > 0:
-            qr_agent = AgentQR(api_ollama="http://localhost:11434/api/generate", model_llm="deepseek-llm:7b", temperature=0.1, seed=100)
+            qr_agent = AgentQR(api_ollama="http://localhost:11434/api/generate", model_llm=self.model_qr, temperature=0.1, seed=100)
             user_message = qr_agent.get_response_AgentQR(last_msg=user_message, historical_payload=self.payload)
 
         docs = self._retrieve_docs(user_message, vector_store_path, k)
