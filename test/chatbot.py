@@ -21,7 +21,8 @@ if __name__ == "__main__":
     index_path = os.path.join(script_dir, '..', 'data', 'sql_l2')
     vector_store_path = os.path.normpath(index_path)
 
-    chatbot = Chatbot(api_ollama=api_ollama, model_llm="llama3.1:8b", model_embeddings="nomic-embed-text", temperature=0.1, seed=100)
+    chatbot = Chatbot(api_ollama=api_ollama, model_llm="llama3.1:8b", model_embeddings="nomic-embed-text",
+                      model_qr="deepseek-llm:7b", temperature=0.1, seed=100)
 
     while True:
         pergunta = input("Pergunta (ou digite 'sair' para encerrar): ")
