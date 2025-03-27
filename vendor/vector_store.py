@@ -58,7 +58,7 @@ class DataToVectorStoreProcessor:
 
     def create_vector_store(self, text_chunks):
         logging.info("Creating vector store using FAISS.")
-        embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_BASE_URL"), model=self.model_name)
+        embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_URL"), model=self.model_name)
 
         with open(f"{self.index_path}_docs.json", "w", encoding="utf-8") as f:
             json.dump(text_chunks, f, ensure_ascii=False, indent=2)
