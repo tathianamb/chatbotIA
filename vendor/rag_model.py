@@ -11,9 +11,10 @@ from vendor.query_rewrite import AgentQR
 
 class Chatbot(BaseAgent):
 
-    def __init__(self, api_ollama, model_llm, model_embeddings, model_qr, temperature, seed):
-        super().__init__(api_ollama, model_llm, temperature, seed)
+    def __init__(self, ollama_url_llm, ollama_url_embeddings, model_llm, model_embeddings, model_qr, temperature, seed):
+        super().__init__(ollama_url_llm, model_llm, temperature, seed)
         self.payload["messages"] = []
+        self.ollama_url_embeddings = ollama_url_embeddings
         self.model_embeddings = model_embeddings
         self.model_qr = model_qr
         logging.info(f'Initial configuration: {model_llm}, {model_embeddings}.')
@@ -36,11 +37,7 @@ class Chatbot(BaseAgent):
 
     def _retrieve_docs(self, context, vector_store_path, k=1):
         logging.info(f"Context to retrieve - {context}")
-
-        if os.getenv("OLLAMA_BASE_URL"):
-            embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_BASE_URL"), model=self.model_embeddings)
-        else:
-            embeddings = OllamaEmbeddings(model="nomic-embed-text")
+        embeddings = OllamaEmbeddings(base_url=self.ollama_url_embeddings, model=self.model_embeddings)
 
         user_question_embedding = np.array(embeddings.embed_query(context)).astype("float32").reshape(1, -1)
 
@@ -70,7 +67,7 @@ class Chatbot(BaseAgent):
     def get_response_RAGChatbot(self, user_message, vector_store_path, k):
 
         if len(self.payload["messages"]) > 0:
-            qr_agent = AgentQR(api_ollama="http://localhost:11434/api/generate", model_llm=self.model_qr, temperature=0.1, seed=100)
+            qr_agent = AgentQR(ollama_url_llm=self.ollama_url_llm, model_llm=self.model_qr, temperature=0.1, seed=100)
             user_message = qr_agent.get_response_AgentQR(last_msg=user_message, historical_payload=self.payload)
 
         docs = self._retrieve_docs(user_message, vector_store_path, k)

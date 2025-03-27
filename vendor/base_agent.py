@@ -5,8 +5,8 @@ import logging
 
 class BaseAgent:
 
-    def __init__(self, api_ollama, model_llm, temperature, seed):
-        self.api_ollama = api_ollama
+    def __init__(self, ollama_url_llm, model_llm, temperature, seed):
+        self.ollama_url_llm = ollama_url_llm
         self.payload = {
             "model": model_llm,
             "stream": False,
@@ -25,7 +25,7 @@ class BaseAgent:
         logging.info('Sending request to API')
         logging.debug('Sent payload: %s', json_payload)
         try:
-            response = requests.post(self.api_ollama, json=self.payload)
+            response = requests.post(self.ollama_url_llm, json=self.payload)
             response.raise_for_status()
             logging.debug('Received response from API with status code: %d', response.status_code)
             logging.debug('Response content: %s', response.text[:500])

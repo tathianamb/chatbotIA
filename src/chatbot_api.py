@@ -19,7 +19,8 @@ class ChatRequest(BaseModel):
     question: str
 
 app = FastAPI()
-api_ollama = "http://ollama:11434/api/chat"
+OLLAMA_URL_LLM = os.getenv('OLLAMA_URL_LLM')
+OLLAMA_URL_EMBEDDINGS = os.getenv('OLLAMA_URL_EMBEDDINGS')
 vector_file_name = 'sql_l2'
 script_dir = os.path.dirname(os.path.realpath(__file__))
 vector_store_path = os.path.join(script_dir, '..', 'data', vector_file_name)
@@ -28,7 +29,8 @@ model_llm = "llama3.1:8b"
 model_embeddings = "nomic-embed-text"
 model_qr = "deepseek-llm:7b"
 
-chatbot = Chatbot(api_ollama=api_ollama, model_llm=model_llm, model_embeddings=model_embeddings, model_qr=model_qr,
+chatbot = Chatbot(ollama_url_llm=OLLAMA_URL_LLM, ollama_url_embeddings=OLLAMA_URL_EMBEDDINGS, model_llm=model_llm,
+                  model_embeddings=model_embeddings, model_qr=model_qr,
                   temperature=0.1, seed=100)
 
 def get_current_time():
@@ -37,7 +39,7 @@ def get_current_time():
 
 @app.get("/")
 def read_root():
-    return {"message": "Bem-vindo à API do Chatbot! Use o endpoint /chatbot para fazer uma pergunta."}
+    return {"message": "Welcome to Chatbot API! Use //chatbot to ask."}
 
 
 @app.post("/chatbot")
