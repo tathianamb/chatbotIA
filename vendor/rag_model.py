@@ -35,7 +35,8 @@ class Chatbot(BaseAgent):
         return index, text_chunks
 
     def _retrieve_docs(self, context, vector_store_path, k=1):
-        print(f"Context to retrive docs: {context}\n")
+        logging.info(f"Context to retrieve - {context}")
+
         if os.getenv("OLLAMA_BASE_URL"):
             embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_BASE_URL"), model=self.model_embeddings)
         else:
