@@ -1,32 +1,78 @@
 from langchain_community.document_loaders import CSVLoader, JSONLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import faiss
-import numpy as np
+from langchain_community.docstore.in_memory import InMemoryDocstore
+from langchain_community.vectorstores import FAISS
+from uuid import uuid4
 from langchain_ollama import OllamaEmbeddings
 import time
 from vendor.mysqlloader import MySQLLoader
 import logging
-import json
 import os
+from typing import (
+    List
+)
+from langchain_core.documents import Document
+
+
+embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_URL_EMBEDDINGS"), model="nomic-embed-text")
+
+
+def load_vector_store(index_path):
+    vector_store = FAISS.load_local(
+        index_path, embeddings, allow_dangerous_deserialization=True
+    )
+
+    return vector_store
+
+
+def _create_vector_store():
+    logging.info("Creating vector store using FAISS.")
+
+    index = faiss.IndexFlatL2(len(embeddings.embed_query("hello world")))
+
+    vector_store = FAISS(
+        embedding_function=embeddings,
+        index=index,
+        docstore=InMemoryDocstore(),
+        index_to_docstore_id={},
+    )
+
+    return vector_store
+
+
+def _add_to_vector_store(vector_store, documents):
+
+    uuids = [str(uuid4()) for _ in range(len(documents))]
+    vector_store.add_documents(documents=documents, ids=uuids)
+
+    return vector_store
+
+
+def _save_vector_store(vector_store, index_path):
+    logging.info(f"Saving vector store to {index_path}")
+    vector_store.save_local(f"{index_path}")
 
 
 class DataToVectorStoreProcessor:
     def __init__(self, source_type, source_config, chunk_size=750, chunk_overlap=150,
-                 model_name="nomic-embed-text", distance_strategy=None, index_path=None):
+                 distance_strategy=None, index_path=None):
 
         self.source_type = source_type
         self.source_config = source_config
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
-        self.model_name = model_name
         self.distance_strategy = distance_strategy
-        self.index_path = index_path if index_path is not None else os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data', f"{source_type}_{distance_strategy}"))
+        self.index_path = index_path if index_path is not None else os.path.normpath(
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data',
+                         f"{source_type}_{distance_strategy}"))
 
         logging.info(f"Initialized DataToVectorStoreProcessor with parameters: "
-                     f"source_type={self.source_type}, chunk_size={self.chunk_size}, chunk_overlap={self.chunk_overlap}, "
-                     f"model_name={self.model_name}, distance_strategy={self.distance_strategy}, index_path={self.index_path}")
+                     f"source_type={self.source_type}, chunk_size={self.chunk_size}, "
+                     f"chunk_overlap={self.chunk_overlap},distance_strategy={self.distance_strategy}, "
+                     f"index_path={self.index_path}")
 
-    def load_documents(self):
+    def _load_documents(self):
         logging.info(f"Loading documents from {self.source_type} source.")
         if self.source_type == "csv":
             loader = CSVLoader(file_path=self.source_config['file_path'],
@@ -49,51 +95,37 @@ class DataToVectorStoreProcessor:
 
         return loader.load()
 
-    def split_texts(self, docs):
+    def _split_docs(self, docs) -> List[Document]:
         logging.info("Splitting text into chunks.")
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=self.chunk_size, chunk_overlap=self.chunk_overlap)
         split_docs = text_splitter.split_documents(docs)
-        return [chunk.page_content for chunk in split_docs]
+        return split_docs
 
-
-    def create_vector_store(self, text_chunks):
-        logging.info("Creating vector store using FAISS.")
-        embeddings = OllamaEmbeddings(base_url=os.getenv("OLLAMA_URL"), model=self.model_name)
-
-        with open(f"{self.index_path}_docs.json", "w", encoding="utf-8") as f:
-            json.dump(text_chunks, f, ensure_ascii=False, indent=2)
-
-        chunk_embeddings = embeddings.embed_documents(text_chunks)
-        chunk_embeddings = np.array(chunk_embeddings).astype("float32")
-
-        if self.distance_strategy == "inner_product":
-            index = faiss.IndexFlatIP(chunk_embeddings.shape[1])
-        elif self.distance_strategy == "l2":
-            index = faiss.IndexFlatL2(chunk_embeddings.shape[1])
-        else:
-            raise ValueError(f"Invalid distance strategy: {self.distance_strategy}")
-
-        index.add(chunk_embeddings)
-
-        return index
-
-
-    def save_vector_store(self, index):
-        logging.info(f"Saving vector store to {self.index_path}")
-        faiss.write_index(index, f"{self.index_path}_index")
-
-
-    def process(self):
-        logging.info("Starting processing.")
+    def manage_vector_store(self, operation):
+        logging.info(f"Starting {operation} operation.")
         start_time = time.time()
 
-        docs = self.load_documents()
-        text_chunks = self.split_texts(docs)
-        vector_store = self.create_vector_store(text_chunks)
+        try:
+            if operation == 'create':
+                docs = self._load_documents()
+                split_docs = self._split_docs(docs)
+                vector_store = _create_vector_store()
+                vector_store = _add_to_vector_store(vector_store, split_docs)
+                _save_vector_store(vector_store, self.index_path)
+            elif operation == 'add_new':
+                docs = self._load_documents()
+                split_docs = self._split_docs(docs)
+                vector_store = load_vector_store(self.index_path)
+                vector_store = _add_to_vector_store(vector_store, split_docs)
+                _save_vector_store(vector_store, self.index_path)
+            else:
+                raise ValueError(f"Invalid operation: {operation}")
 
-        self.save_vector_store(vector_store)
+        except Exception as e:
+            logging.error(f"Error during {operation} operation: {str(e)}")
+            raise
 
         end_time = time.time()
         elapsed_time = end_time - start_time
-        logging.info(f"Processing completed in {elapsed_time:.2f} seconds.")
+        logging.info(f"{operation.capitalize()} operation completed in {elapsed_time:.2f} seconds.")
         return vector_store
