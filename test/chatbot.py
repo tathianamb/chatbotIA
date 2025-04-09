@@ -19,7 +19,7 @@ if __name__ == "__main__":
     OLLAMA_URL_EMBEDDINGS = os.getenv('OLLAMA_URL_EMBEDDINGS', "http://localhost:11434")
 
     script_dir = os.path.dirname(os.path.realpath(__file__))
-    index_path = os.path.join(script_dir, '..', 'data', 'sql_l2')
+    index_path = os.path.join(script_dir, '..', 'data', 'l2')
     vector_store_path = os.path.normpath(index_path)
 
     chatbot = Chatbot(ollama_url_llm=OLLAMA_URL_LLM, ollama_url_embeddings=OLLAMA_URL_EMBEDDINGS,
