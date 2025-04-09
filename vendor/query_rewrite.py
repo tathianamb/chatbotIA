@@ -25,12 +25,10 @@ class AgentQR(BaseAgent):
 
         historical = self._build_context(historical_payload, k)
         self._set_messages("prompt",
-                           f"""Você é um assistente útil que reescreve perguntas. Gere uma nova pergunta de pesquisa relacionada às seguintes entradas:
-                                        Entrada anterior: {historical}
-                                        Entrada atual: {last_msg}
-                                        Nova pergunta:
-                                    """)
+                           f"Você é um assistente útil que reescreve perguntas. Gere uma nova pergunta de "
+                           f"pesquisa relacionada às seguintes entradas:\nEntrada anterior: {historical}"
+                           f"\nEntrada atual: {last_msg}\nNova pergunta:")
         response_data = self._send_request()
-        answer = response_data.get("response", "No content found.")
-
+        answer = response_data.get("response") or logging.warning(
+            f"Não foi possível reescrever a última mensagem adicionando contexto do histórico.") or last_msg
         return answer
