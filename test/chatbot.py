@@ -1,10 +1,14 @@
 from vendor.rag_model import Chatbot
 import os
 import logging
+from pathlib import Path
 
+
+log_dir = Path(__file__).parent.parent / "log"
+log_file = log_dir / "rag_model_run.log"
 
 logging.basicConfig(
-    filename='../log/rag_model_run.log',
+    filename=str(log_file),
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
     encoding='utf-8'
