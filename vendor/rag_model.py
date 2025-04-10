@@ -30,8 +30,6 @@ class Chatbot(BaseAgent):
         self.payload["messages"].append(message)
         logging.info(f"Added message to payload - {message}")
 
-        logging.info(f"{message}")
-
     def _retrieve_docs(self, context, vector_store_path, k=1):
         logging.info(f"Context to retrieve - {context}")
 
